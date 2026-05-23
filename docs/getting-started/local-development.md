@@ -293,7 +293,7 @@ See [Database Seeding Deep Dive](./database-seeding.md) for details.
 
 - Read the [Environment Variables](./environment-variables.md) Guide to understand all secrets.
 - Explore the [Database Seeding](./database-seeding.md) to customise mock data.
-- For production deployment, see `docker-compose.prod.yml` and the [Deployment Guide](../deployment/README.md).  
+- For production deployment, see `docker-compose.prod.yml` and the [Deployment Guide](../deployment/production-checklist.md).  
 
 ---  
 

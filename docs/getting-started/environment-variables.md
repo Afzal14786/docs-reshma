@@ -1,7 +1,7 @@
 # Environment Variables Configuration Guide
 
 ## Overview
-The Reshma-Core backend utilizes a **strict fail-fast initialization** strategy. All environment variables are validated at runtime using a Zod schema located in [`src/config/env.ts`](../../src/config/env.ts). If any required variable is missing, empty, or incorrectly formatted, the Node.js process will terminate immediately with a descriptive validation error. This ensures that the system never runs in an insecure or partially configured state.
+The Reshma-Core backend utilizes a **strict fail-fast initialization** strategy. All environment variables are validated at runtime using a Zod schema located in `src/config/env.ts`. If any required variable is missing, empty, or incorrectly formatted, the Node.js process will terminate immediately with a descriptive validation error. This ensures that the system never runs in an insecure or partially configured state.
 
 ---
 

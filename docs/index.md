@@ -57,7 +57,7 @@ Complete REST API documentation for frontend developers.
 
 | Section | Description |
 |---------|-------------|
-| [API Overview](./api/README.md) | Base URLs, response shapes, pagination, rate limits |
+| [API Overview](./api/) | Base URLs, response shapes, pagination, rate limits |
 | [Authentication](./api/authentication.md) | Two‑token JWT flow, refresh, logout |
 | [Error Handling](./api/error-codes.md) | HTTP status codes, error payloads |
 | [Rate Limiting](./api/rate-limiting.md) | Global and route‑specific limits |
@@ -117,7 +117,7 @@ Understand the “why” behind the code.
 ## Testing & Runbooks
 
 Manual test sequences for each module (Thunder Client / Postman).  
-Located in [`./api/thunder-tests/`](./api/thunder-tests/).
+Located in [`./api/thunder-tests/`](./api/thunder-tests/auth-runbook.md).
 
 | Runbook | Module |
 |---------|--------|

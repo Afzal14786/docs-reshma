@@ -270,7 +270,7 @@ The global error handler (`@shared/middlewares/error.middleware.ts`) automatical
 
 - [Authentication Guide](./authentication.md) – 401/403 details and refresh flow.
 - [Rate Limiting Guide](./rate-limiting.md) – 429 headers and backoff strategies.
-- [API README](./README.md) – standard response shapes.  
+- [API README](../) – standard response shapes.  
 
 --- 
 

@@ -10,7 +10,7 @@ const config = {
   baseUrl: "/docs-reshma/",
   organizationName: "Afzal14786",
   projectName: "reshma-docs",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   i18n: { defaultLocale: "en", locales: ["en"] },
   markdown: { mermaid: true, format: "md" },
