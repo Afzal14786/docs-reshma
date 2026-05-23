@@ -1,0 +1,10 @@
+---
+title: License
+---
+
+Copyright (c) 2026 Md Afzal Ansari (Reshma Bangles & Boutique)
+
+All rights reserved. This software and its source code are the confidential
+and proprietary information of Reshma Bangles & Boutique. You may not use,
+copy, modify, or distribute this software without explicit written permission
+from the copyright holder.
