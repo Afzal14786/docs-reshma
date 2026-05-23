@@ -42,10 +42,10 @@ export default function Footer() {
         <div className="footer-col links-col">
           <h4 className="footer-heading">Company</h4>
           <ul className="footer-links">
-            <li><a href="/reshma-docs/docs/deployment/production-checklist">Support & Deployments</a></li>
-            <li><a href="/reshma-docs/docs/legal/privacy-policy">Privacy Policy</a></li>
-            <li><a href="/reshma-docs/docs/legal/terms">Terms of Service</a></li>
-            <li><a href="/reshma-docs/docs/legal/license">System License</a></li>
+            <li><a href="/docs-reshma/docs/deployment/production-checklist">Support & Deployments</a></li>
+            <li><a href="/docs-reshma/docs/legal/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/docs-reshma/docs/legal/terms">Terms of Service</a></li>
+            <li><a href="/docs-reshma/docs/legal/license">System License</a></li>
           </ul>
         </div>
 
