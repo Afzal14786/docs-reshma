@@ -1,0 +1,259 @@
+/* -------------------------------------------
+   Reshma-Core Theme: "Elegant Engineering"
+   ------------------------------------------- */
+
+/* We map your boutique colors directly into Docusaurus's core engine */
+:root {
+  /* Brand Variables */
+  --cream: #FAFAF8;
+  --rose-gold: #D4A5A5;
+  --deep-brown: #5D4037;
+  --gold: #C49A6C;
+  --text-dark: #2C2724;
+  --border-light: #E8DCD0;
+
+  /* Docusaurus Core Infima Variables */
+  --ifm-color-primary: var(--rose-gold);
+  --ifm-color-primary-dark: #C89999;
+  --ifm-color-primary-darker: #BE8E8E;
+  --ifm-color-primary-darkest: #A57676;
+  --ifm-color-primary-light: #E0B1B1;
+  --ifm-color-primary-lighter: #E6B8B8;
+  --ifm-color-primary-lightest: #F5CACA;
+  
+  --ifm-background-color: var(--cream);
+  --ifm-font-color-base: var(--text-dark);
+  --ifm-heading-color: var(--deep-brown);
+  --ifm-font-family-base: 'Lato', sans-serif;
+  --ifm-heading-font-family: 'Playfair Display', serif;
+}
+
+/* Midnight Slate (Dark Mode) */
+html[data-theme='dark'] {
+  --cream: #1A1C1E; /* Deep Slate */
+  --rose-gold: #C88A91; /* Metallic Rose */
+  --deep-brown: #E2E2E2; /* Milled Silver for headers */
+  --gold: #B08D6A; /* Muted Brass */
+  --text-dark: #D1D5DB; /* Soft gray for readability */
+  --border-light: #2D3136;
+
+  --ifm-color-primary: var(--rose-gold);
+  --ifm-background-color: var(--cream);
+  --ifm-font-color-base: var(--text-dark);
+  --ifm-heading-color: var(--deep-brown);
+}
+
+/* -------------------------------------
+   Global Overrides & UI Polish
+   ------------------------------------- */
+
+/* Soften the code blocks for the elegant theme */
+.theme-code-block {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* Navbar glass effect */
+.navbar {
+  background: rgba(250, 250, 248, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+}
+html[data-theme='dark'] .navbar {
+  background: rgba(26, 28, 30, 0.85);
+}
+
+/* Sidebar active link styling */
+.menu__link--active {
+  background-color: rgba(212, 165, 165, 0.15) !important;
+  color: var(--deep-brown) !important;
+  font-weight: 700;
+  border-right: 3px solid var(--rose-gold);
+  border-radius: 4px;
+}
+html[data-theme='dark'] .menu__link--active {
+  color: var(--rose-gold) !important;
+}
+
+/* -------------------------------------
+   Boutique Footer – Professional Layout
+   ------------------------------------- */
+
+.boutique-footer {
+  background: var(--cream);
+  border-top: 1px solid var(--border-light);
+  padding: 4rem 1.5rem 1.5rem 1.5rem;
+  margin-top: 4rem;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--deep-brown);
+  margin-bottom: 1rem;
+}
+
+.footer-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--deep-brown);
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.footer-heading::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--rose-gold);
+  margin-top: 8px;
+}
+
+.footer-description {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  opacity: 0.85;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.social-icons a, .icon-row a {
+  font-size: 1.3rem;
+  color: var(--deep-brown);
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover, .icon-row a:hover {
+  color: var(--gold);
+  transform: translateY(-3px);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.footer-links a {
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  opacity: 0.85;
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+  padding-left: 5px;
+  opacity: 1;
+}
+
+.dev-info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+.dev-name {
+  font-weight: 700;
+  color: var(--deep-brown);
+  font-size: 1.1rem;
+}
+
+.dev-title {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  color: var(--text-dark);
+}
+
+.dev-icons {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.dev-icons a {
+  font-size: 1.1rem;
+  color: var(--deep-brown);
+  background: rgba(212, 165, 165, 0.15); 
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.dev-icons a:hover {
+  background: var(--rose-gold);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.copyright-text {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .footer-col {
+    align-items: center;
+    text-align: center;
+  }
+  .footer-heading::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-links {
+    align-items: center;
+  }
+  .social-icons, .dev-icons {
+    justify-content: center;
+  }
+}

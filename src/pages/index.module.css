@@ -1,0 +1,88 @@
+/* Hero section - Now uses theme variables instead of hardcoded colors */
+.hero {
+  padding: 6rem 2rem;
+  text-align: center;
+  background: var(--ifm-background-color);
+  border-bottom: 1px solid var(--border-light);
+  color: var(--ifm-font-color-base);
+}
+
+.heroInner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+}
+
+.heroTagline {
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.85;
+  font-weight: 300;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Features section */
+.features {
+  padding: 5rem 0;
+  background: var(--cream);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feature {
+  text-align: center;
+  padding: 2.5rem 1.8rem;
+  border-radius: 16px;
+  background: var(--ifm-background-color);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-color: var(--rose-gold);
+}
+
+.featureIcon {
+  font-size: 3rem;
+  margin-bottom: 1.2rem;
+  color: var(--rose-gold);
+}
+
+.feature h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  font-family: var(--ifm-heading-font-family);
+  color: var(--ifm-heading-color);
+}
+
+.feature p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+  opacity: 0.85;
+}
