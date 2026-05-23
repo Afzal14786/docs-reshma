@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="..//img/reshma_bangles.jpg" alt="Reshma Bangles & Boutique Logo" width="120" />
+  <img src="../../static/img/banner.png" alt="Reshma Bangles & Boutique Logo" width="120" />
 
   # Local Development Setup
   

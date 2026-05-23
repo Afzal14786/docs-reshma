@@ -1,4 +1,4 @@
-<img src="..//img/banner.png" alt="Reshma Bangles & Boutique - API Core" style="width: 100%; display: block; margin: 0;" />
+<img src="../../static/img/banner.png" alt="Reshma Bangles & Boutique - API Core" style="width: 100%; display: block; margin: 0;" />
 <br/>
 
 <div align="center">
