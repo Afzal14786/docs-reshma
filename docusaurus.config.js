@@ -7,7 +7,7 @@ const config = {
   tagline: "Backend API, Architecture, and Developer Guides",
   favicon: "img/app-logo.png",
   url: "https://afzal14786.github.io",
-  baseUrl: "/reshma-docs/",
+  baseUrl: "/docs-reshma/",
   organizationName: "Afzal14786",
   projectName: "reshma-docs",
   onBrokenLinks: "throw",
