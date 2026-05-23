@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-api/thunder-tests/cart-runbook" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Thunder Client Runbook: Cart Module | Reshma‑Core Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://afzal14786.github.io/docs-reshma/img/app-logo.png"><meta data-rh="true" name="twitter:image" content="https://afzal14786.github.io/docs-reshma/img/app-logo.png"><meta data-rh="true" property="og:url" content="https://afzal14786.github.io/docs-reshma/docs/api/thunder-tests/cart-runbook"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Thunder Client Runbook: Cart Module | Reshma‑Core Documentation"><meta data-rh="true" name="description" content="Base URL: {}/api/v1/carts"><meta data-rh="true" property="og:description" content="Base URL: {}/api/v1/carts"><link data-rh="true" rel="icon" href="/docs-reshma/img/app-logo.png"><link data-rh="true" rel="canonical" href="https://afzal14786.github.io/docs-reshma/docs/api/thunder-tests/cart-runbook"><link data-rh="true" rel="alternate" href="https://afzal14786.github.io/docs-reshma/docs/api/thunder-tests/cart-runbook" hreflang="en"><link data-rh="true" rel="alternate" href="https://afzal14786.github.io/docs-reshma/docs/api/thunder-tests/cart-runbook" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Thunder Client Runbook: Cart Module","item":"https://afzal14786.github.io/docs-reshma/docs/api/thunder-tests/cart-runbook"}]}</script><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Lato:wght@300;400;700&amp;display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="/docs-reshma/assets/css/styles.3818e395.css">
+<script src="/docs-reshma/assets/js/runtime~main.fab89455.js" defer="defer"></script>
+<script src="/docs-reshma/assets/js/main.dccac395.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/docs-reshma/img/app-logo.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/docs-reshma/"><div class="navbar__logo"><img src="/docs-reshma/img/app-logo.png" alt="Reshma Bangles Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/docs-reshma/img/app-logo.png" alt="Reshma Bangles Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Reshma‑Core</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs-reshma/docs/">Docs</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/Afzal14786" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs-reshma/docs/"><span title="🏠 Overview" class="linkLabel_WmDU">🏠 Overview</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs-reshma/docs/getting-started/local-development"><span title="🚀 Getting Started" class="categoryLinkLabel_W154">🚀 Getting Started</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/getting-started/local-development"><span title="local-development" class="linkLabel_WmDU">local-development</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/getting-started/docker-setup"><span title="docker-setup" class="linkLabel_WmDU">docker-setup</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/getting-started/environment-variables"><span title="Environment Variables Configuration Guide" class="linkLabel_WmDU">Environment Variables Configuration Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/getting-started/database-seeding"><span title="database-seeding" class="linkLabel_WmDU">database-seeding</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs-reshma/docs/api/authentication"><span title="📡 API Reference" class="categoryLinkLabel_W154">📡 API Reference</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/authentication"><span title="authentication" class="linkLabel_WmDU">authentication</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/rate-limiting"><span title="rate-limiting" class="linkLabel_WmDU">rate-limiting</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/error-codes"><span title="error-codes" class="linkLabel_WmDU">error-codes</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs-reshma/docs/api/modules/auth"><span title="📦 Modules" class="categoryLinkLabel_W154">📦 Modules</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/docs-reshma/docs/api/thunder-tests/auth-runbook"><span title="🧪 Testing (Runbooks)" class="categoryLinkLabel_W154">🧪 Testing (Runbooks)</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/thunder-tests/auth-runbook"><span title="Authentication Testing Runbook (Manual)" class="linkLabel_WmDU">Authentication Testing Runbook (Manual)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/thunder-tests/user-runbook"><span title="Thunder Client Runbook: User Module" class="linkLabel_WmDU">Thunder Client Runbook: User Module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/thunder-tests/product-runbook"><span title="Product Catalog Testing Runbook (Manual)" class="linkLabel_WmDU">Product Catalog Testing Runbook (Manual)</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs-reshma/docs/api/thunder-tests/cart-runbook"><span title="Thunder Client Runbook: Cart Module" class="linkLabel_WmDU">Thunder Client Runbook: Cart Module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/thunder-tests/order-runbook"><span title="Thunder Client Runbook: Order &amp; Logistics Module" class="linkLabel_WmDU">Thunder Client Runbook: Order &amp; Logistics Module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/thunder-tests/return-runbook"><span title="Thunder Client Runbook: Returns Module" class="linkLabel_WmDU">Thunder Client Runbook: Returns Module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/thunder-tests/interaction-runbook"><span title="Thunder Client Runbook: Interactions Module" class="linkLabel_WmDU">Thunder Client Runbook: Interactions Module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/thunder-tests/coupon-runbook"><span title="Thunder Client Runbook: Coupon Module" class="linkLabel_WmDU">Thunder Client Runbook: Coupon Module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/thunder-tests/wishlist-runbook"><span title="Thunder Client Runbook: Wishlist Module" class="linkLabel_WmDU">Thunder Client Runbook: Wishlist Module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/thunder-tests/search-runbook"><span title="Thunder Client Runbook: Search Module" class="linkLabel_WmDU">Thunder Client Runbook: Search Module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/thunder-tests/dashboard-runbook"><span title="Thunder Client Runbook: Dashboard Module" class="linkLabel_WmDU">Thunder Client Runbook: Dashboard Module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/thunder-tests/support-runbook"><span title="Thunder Client Runbook: Customer Support Module" class="linkLabel_WmDU">Thunder Client Runbook: Customer Support Module</span></a></li></ul></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs-reshma/docs/architecture/system-overview"><span title="🏗️ Architecture" class="categoryLinkLabel_W154">🏗️ Architecture</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs-reshma/docs/deployment/production-checklist"><span title="☁️ Deployment" class="categoryLinkLabel_W154">☁️ Deployment</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs-reshma/docs/modules/auth-module"><span title="🧩 Module Deep Dives" class="categoryLinkLabel_W154">🧩 Module Deep Dives</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs-reshma/docs/glossary"><span title="📖 Glossary" class="linkLabel_WmDU">📖 Glossary</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/docs-reshma/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">📡 API Reference</span></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">🧪 Testing (Runbooks)</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Thunder Client Runbook: Cart Module</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Thunder Client Runbook: Cart Module</h1></header>
+<p><strong>Base URL:</strong> <code>{{API_URL}}/api/v1/carts</code><br>
+<strong>Auth Requirement:</strong> All endpoints require a valid <code>Bearer {{JWT_TOKEN}}</code> in the Authorization header.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-the-happy-path-sequential-test-suite">1. The &quot;Happy Path&quot; (Sequential Test Suite)<a href="#1-the-happy-path-sequential-test-suite" class="hash-link" aria-label="Direct link to 1. The &quot;Happy Path&quot; (Sequential Test Suite)" title="Direct link to 1. The &quot;Happy Path&quot; (Sequential Test Suite)" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="test-1-fetch-empty-cart-initial-state">Test 1: Fetch Empty Cart (Initial State)<a href="#test-1-fetch-empty-cart-initial-state" class="hash-link" aria-label="Direct link to Test 1: Fetch Empty Cart (Initial State)" title="Direct link to Test 1: Fetch Empty Cart (Initial State)" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Method:</strong> <code>GET /</code></li>
+<li class=""><strong>Headers:</strong> <code>Authorization: Bearer {{USER_ACCESS_TOKEN}}</code></li>
+<li class=""><strong>Expected Result:</strong> <code>200 OK</code>. Response should contain <code>{ &quot;items&quot;: [] }</code> (empty cart).</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="test-2-add-item-to-cart">Test 2: Add Item to Cart<a href="#test-2-add-item-to-cart" class="hash-link" aria-label="Direct link to Test 2: Add Item to Cart" title="Direct link to Test 2: Add Item to Cart" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Method:</strong> <code>POST /add</code></li>
+<li class=""><strong>Headers:</strong> <code>Authorization: Bearer {{USER_ACCESS_TOKEN}}</code></li>
+<li class=""><strong>Body (JSON):</strong>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;productId&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;&lt;VALID_PRODUCT_ID&gt;&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;quantity&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">2</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;selectedAttributes&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"> </span><span class="token property" style="color:#36acaa">&quot;size&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;M&quot;</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></div></code></pre></div></div>
+</li>
+</ul>
+<ul>
+<li class=""><strong>Expected Result:</strong> <code>200 OK</code>. Response shows the added item with quantity 2.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="test-3-add-another-item-different-product">Test 3: Add Another Item (Different Product)<a href="#test-3-add-another-item-different-product" class="hash-link" aria-label="Direct link to Test 3: Add Another Item (Different Product)" title="Direct link to Test 3: Add Another Item (Different Product)" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Method:</strong> <code>POST /add</code></p>
+</li>
+<li class="">
+<p><strong>Body (JSON):</strong></p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token property" style="color:#36acaa">&quot;productId&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;&lt;ANOTHER_VALID_PRODUCT_ID&gt;&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token property" style="color:#36acaa">&quot;quantity&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">1</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></div></code></pre></div></div>
+</li>
+<li class="">
+<p><strong>Expected Result:</strong> <code>200 OK</code>. Cart now contains two items.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="test-4-update-quantity-of-first-item">Test 4: Update Quantity of First Item<a href="#test-4-update-quantity-of-first-item" class="hash-link" aria-label="Direct link to Test 4: Update Quantity of First Item" title="Direct link to Test 4: Update Quantity of First Item" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Method:</strong> <code>PATCH /update</code></p>
+</li>
+<li class="">
+<p><strong>Body (JSON):</strong></p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token property" style="color:#36acaa">&quot;productId&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;&lt;PRODUCT_ID_FROM_TEST_2&gt;&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token property" style="color:#36acaa">&quot;quantity&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">5</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token property" style="color:#36acaa">&quot;selectedAttributes&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"> </span><span class="token property" style="color:#36acaa">&quot;size&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;M&quot;</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></div></code></pre></div></div>
+</li>
+</ul>
+<ul>
+<li class=""><strong>Expected Result:</strong> <code>200 OK</code>. Quantity of that item updates to 5.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="test-5-remove-one-item">Test 5: Remove One Item<a href="#test-5-remove-one-item" class="hash-link" aria-label="Direct link to Test 5: Remove One Item" title="Direct link to Test 5: Remove One Item" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Method:</strong> <code>DELETE /item/&lt;PRODUCT_ID_FROM_TEST_3&gt;</code></li>
+<li class=""><strong>Expected Result:</strong> <code>200 OK</code>. Cart now contains only the first item.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="test-6-apply-a-coupon">Test 6: Apply a Coupon<a href="#test-6-apply-a-coupon" class="hash-link" aria-label="Direct link to Test 6: Apply a Coupon" title="Direct link to Test 6: Apply a Coupon" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p><strong>Pre-requisite:</strong> Create a coupon via admin endpoint (e.g., <code>DIWALI500</code> with minCartValue 1000). Ensure cart subtotal &gt;= minCartValue.</p>
+</li>
+<li class="">
+<p><strong>Method:</strong> <code>POST /coupon/apply</code></p>
+</li>
+<li class="">
+<p><strong>Body (JSON):</strong></p>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token property" style="color:#36acaa">&quot;code&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;DIWALI500&quot;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></div></code></pre></div></div>
+</li>
+<li class="">
+<p><strong>Expected Result:</strong> <code>200 OK</code>. Cart response includes appliedCoupon and recalculated total.</p>
+</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="test-7-remove-applied-coupon">Test 7: Remove Applied Coupon<a href="#test-7-remove-applied-coupon" class="hash-link" aria-label="Direct link to Test 7: Remove Applied Coupon" title="Direct link to Test 7: Remove Applied Coupon" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Method:</strong> <code>DELETE /coupon/remove</code></li>
+<li class=""><strong>Expected Result:</strong> <code>200 OK</code>. Cart no longer has appliedCoupon and total equals subtotal.</li>
+</ul>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="test-8-clear-cart">Test 8: Clear Cart<a href="#test-8-clear-cart" class="hash-link" aria-label="Direct link to Test 8: Clear Cart" title="Direct link to Test 8: Clear Cart" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Method:</strong> <code>DELETE /clear</code></li>
+<li class=""><strong>Expected Result:</strong> <code>200 OK</code>. Cart becomes empty (items array empty).</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-guest-cart-merge-flow">2. Guest Cart Merge Flow<a href="#2-guest-cart-merge-flow" class="hash-link" aria-label="Direct link to 2. Guest Cart Merge Flow" title="Direct link to 2. Guest Cart Merge Flow" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="test-9-merge-guest-cart-after-login">Test 9: Merge Guest Cart After Login<a href="#test-9-merge-guest-cart-after-login" class="hash-link" aria-label="Direct link to Test 9: Merge Guest Cart After Login" title="Direct link to Test 9: Merge Guest Cart After Login" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Pre-requisite:</strong> Before logging in, the frontend maintains a guest cart in localStorage.</li>
+<li class=""><strong>Action:</strong> After login, send the guest cart payload to merge.</li>
+<li class=""><strong>Method:</strong> <code>POST /merge</code></li>
+<li class=""><strong>Headers:</strong> <code>Authorization: Bearer {{USER_ACCESS_TOKEN}}</code></li>
+<li class=""><strong>Body (JSON):</strong>
+<div class="language-json codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-json codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token property" style="color:#36acaa">&quot;items&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;productId&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;&lt;PRODUCT_ID&gt;&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;quantity&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">1</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token property" style="color:#36acaa">&quot;selectedAttributes&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"> </span><span class="token property" style="color:#36acaa">&quot;color&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;Red&quot;</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></div></code></pre></div></div>
+</li>
+</ul>
+<ul>
+<li class=""><strong>Expected Result:</strong> <code>200 OK</code>. Cart now contains the merged items (combined with any existing items – quantities sum if same product+attributes).</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-security--edge-case-testing-negative-tests">3. Security &amp; Edge Case Testing (Negative Tests)<a href="#3-security--edge-case-testing-negative-tests" class="hash-link" aria-label="Direct link to 3. Security &amp; Edge Case Testing (Negative Tests)" title="Direct link to 3. Security &amp; Edge Case Testing (Negative Tests)" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="edge-case-1-duplicate-item-addition-idempotency">Edge Case 1: Duplicate Item Addition (Idempotency)<a href="#edge-case-1-duplicate-item-addition-idempotency" class="hash-link" aria-label="Direct link to Edge Case 1: Duplicate Item Addition (Idempotency)" title="Direct link to Edge Case 1: Duplicate Item Addition (Idempotency)" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Action:</strong> Send <code>POST /add</code> twice with the exact same <code>productId</code> and attributes.</li>
+<li class=""><strong>Expected Result:</strong> <code>200 OK</code> both times, but cart still has only one entry (quantity increments, not duplicate).</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="edge-case-2-exceeding-stock-409-conflict">Edge Case 2: Exceeding Stock (409 Conflict)<a href="#edge-case-2-exceeding-stock-409-conflict" class="hash-link" aria-label="Direct link to Edge Case 2: Exceeding Stock (409 Conflict)" title="Direct link to Edge Case 2: Exceeding Stock (409 Conflict)" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Action:</strong> Add an item with quantity &gt; available stock.</li>
+<li class=""><strong>Expected Result:</strong> <code>409 Conflict</code> with message <code>&quot;Requested quantity exceeds available stock&quot;</code>.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="edge-case-3-invalid-product-id-nosql-injection-attempt">Edge Case 3: Invalid Product ID (NoSQL Injection Attempt)<a href="#edge-case-3-invalid-product-id-nosql-injection-attempt" class="hash-link" aria-label="Direct link to Edge Case 3: Invalid Product ID (NoSQL Injection Attempt)" title="Direct link to Edge Case 3: Invalid Product ID (NoSQL Injection Attempt)" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Action:</strong> Send <code>POST /add</code> with <code>&quot;productId&quot;: &quot;{ $ne: null }&quot;</code>.</li>
+<li class=""><strong>Expected Result:</strong> <code>400 Bad Request</code> – Zod validation catches invalid 24‑hex format.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="edge-case-4-apply-expired-coupon">Edge Case 4: Apply Expired Coupon<a href="#edge-case-4-apply-expired-coupon" class="hash-link" aria-label="Direct link to Edge Case 4: Apply Expired Coupon" title="Direct link to Edge Case 4: Apply Expired Coupon" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Action:</strong> Apply a coupon that has expired or does not exist.</li>
+<li class=""><strong>Expected Result:</strong> <code>404 Not Found</code> with <code>&quot;Coupon not found or expired&quot;</code>.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="edge-case-5-coupon-min-cart-value-not-met">Edge Case 5: Coupon Min Cart Value Not Met<a href="#edge-case-5-coupon-min-cart-value-not-met" class="hash-link" aria-label="Direct link to Edge Case 5: Coupon Min Cart Value Not Met" title="Direct link to Edge Case 5: Coupon Min Cart Value Not Met" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Action:</strong> Apply a coupon with <code>minCartValue</code> higher than current cart subtotal.</li>
+<li class=""><strong>Expected Result:</strong> <code>400 Bad Request</code> with <code>&quot;Cart value does not meet minimum requirement for this coupon&quot;</code>.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="edge-case-6-negative-quantity">Edge Case 6: Negative Quantity<a href="#edge-case-6-negative-quantity" class="hash-link" aria-label="Direct link to Edge Case 6: Negative Quantity" title="Direct link to Edge Case 6: Negative Quantity" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Action:</strong> Send <code>PATCH /update</code> with <code>&quot;quantity&quot;: -1</code>.</li>
+<li class=""><strong>Expected Result:</strong> <code>400 Bad Request</code> – Zod rejects negative numbers.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="edge-case-7-remove-nonexistent-item">Edge Case 7: Remove Non‑Existent Item<a href="#edge-case-7-remove-nonexistent-item" class="hash-link" aria-label="Direct link to Edge Case 7: Remove Non‑Existent Item" title="Direct link to Edge Case 7: Remove Non‑Existent Item" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Action:</strong> <code>DELETE /item/&lt;INVALID_OR_NONEXISTENT_PRODUCT_ID&gt;</code></li>
+<li class=""><strong>Expected Result:</strong> <code>200 OK</code> (no error, cart unchanged – idempotent).</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="edge-case-8-update-item-with-wrong-selectedattributes">Edge Case 8: Update Item with Wrong SelectedAttributes<a href="#edge-case-8-update-item-with-wrong-selectedattributes" class="hash-link" aria-label="Direct link to Edge Case 8: Update Item with Wrong SelectedAttributes" title="Direct link to Edge Case 8: Update Item with Wrong SelectedAttributes" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Action:</strong> Attempt to update quantity of an item but provide <code>selectedAttributes</code> that do not match the existing item.</li>
+<li class=""><strong>Expected Result:</strong> <code>404 Not Found</code> (no item with that combination found).</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-checklist-for-manual-testing">4. Checklist for Manual Testing<a href="#4-checklist-for-manual-testing" class="hash-link" aria-label="Direct link to 4. Checklist for Manual Testing" title="Direct link to 4. Checklist for Manual Testing" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Test</th><th>Passed?</th><th>Notes</th></tr></thead><tbody><tr><td>Fetch empty cart</td><td>☐</td><td></td></tr><tr><td>Add item</td><td>☐</td><td></td></tr><tr><td>Add second item</td><td>☐</td><td></td></tr><tr><td>Update quantity</td><td>☐</td><td></td></tr><tr><td>Remove one item</td><td>☐</td><td></td></tr><tr><td>Apply coupon</td><td>☐</td><td></td></tr><tr><td>Remove coupon</td><td>☐</td><td></td></tr><tr><td>Clear cart</td><td>☐</td><td></td></tr><tr><td>Merge guest cart</td><td>☐</td><td></td></tr><tr><td>Duplicate addition (idempotency)</td><td>☐</td><td></td></tr><tr><td>Stock validation (409)</td><td>☐</td><td></td></tr><tr><td>NoSQL injection (400)</td><td>☐</td><td></td></tr><tr><td>Expired coupon (404)</td><td>☐</td><td></td></tr><tr><td>Min cart value failure (400)</td><td>☐</td><td></td></tr><tr><td>Negative quantity (400)</td><td>☐</td><td></td></tr><tr><td>Remove non‑existent item (200)</td><td>☐</td><td></td></tr><tr><td>Wrong attributes on update (404)</td><td>☐</td><td></td></tr></tbody></table>
+<hr>
+<p><strong>Maintained by Reshma‑Core QA</strong></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/Afzal14786/docs-reshma/edit/main/docs/api/thunder-tests/cart-runbook.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs-reshma/docs/api/thunder-tests/product-runbook"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Product Catalog Testing Runbook (Manual)</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs-reshma/docs/api/thunder-tests/order-runbook"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Thunder Client Runbook: Order &amp; Logistics Module</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-the-happy-path-sequential-test-suite" class="table-of-contents__link toc-highlight">1. The &quot;Happy Path&quot; (Sequential Test Suite)</a><ul><li><a href="#test-1-fetch-empty-cart-initial-state" class="table-of-contents__link toc-highlight">Test 1: Fetch Empty Cart (Initial State)</a></li><li><a href="#test-2-add-item-to-cart" class="table-of-contents__link toc-highlight">Test 2: Add Item to Cart</a></li><li><a href="#test-3-add-another-item-different-product" class="table-of-contents__link toc-highlight">Test 3: Add Another Item (Different Product)</a></li><li><a href="#test-4-update-quantity-of-first-item" class="table-of-contents__link toc-highlight">Test 4: Update Quantity of First Item</a></li><li><a href="#test-5-remove-one-item" class="table-of-contents__link toc-highlight">Test 5: Remove One Item</a></li><li><a href="#test-6-apply-a-coupon" class="table-of-contents__link toc-highlight">Test 6: Apply a Coupon</a></li><li><a href="#test-7-remove-applied-coupon" class="table-of-contents__link toc-highlight">Test 7: Remove Applied Coupon</a></li><li><a href="#test-8-clear-cart" class="table-of-contents__link toc-highlight">Test 8: Clear Cart</a></li></ul></li><li><a href="#2-guest-cart-merge-flow" class="table-of-contents__link toc-highlight">2. Guest Cart Merge Flow</a><ul><li><a href="#test-9-merge-guest-cart-after-login" class="table-of-contents__link toc-highlight">Test 9: Merge Guest Cart After Login</a></li></ul></li><li><a href="#3-security--edge-case-testing-negative-tests" class="table-of-contents__link toc-highlight">3. Security &amp; Edge Case Testing (Negative Tests)</a><ul><li><a href="#edge-case-1-duplicate-item-addition-idempotency" class="table-of-contents__link toc-highlight">Edge Case 1: Duplicate Item Addition (Idempotency)</a></li><li><a href="#edge-case-2-exceeding-stock-409-conflict" class="table-of-contents__link toc-highlight">Edge Case 2: Exceeding Stock (409 Conflict)</a></li><li><a href="#edge-case-3-invalid-product-id-nosql-injection-attempt" class="table-of-contents__link toc-highlight">Edge Case 3: Invalid Product ID (NoSQL Injection Attempt)</a></li><li><a href="#edge-case-4-apply-expired-coupon" class="table-of-contents__link toc-highlight">Edge Case 4: Apply Expired Coupon</a></li><li><a href="#edge-case-5-coupon-min-cart-value-not-met" class="table-of-contents__link toc-highlight">Edge Case 5: Coupon Min Cart Value Not Met</a></li><li><a href="#edge-case-6-negative-quantity" class="table-of-contents__link toc-highlight">Edge Case 6: Negative Quantity</a></li><li><a href="#edge-case-7-remove-nonexistent-item" class="table-of-contents__link toc-highlight">Edge Case 7: Remove Non‑Existent Item</a></li><li><a href="#edge-case-8-update-item-with-wrong-selectedattributes" class="table-of-contents__link toc-highlight">Edge Case 8: Update Item with Wrong SelectedAttributes</a></li></ul></li><li><a href="#4-checklist-for-manual-testing" class="table-of-contents__link toc-highlight">4. Checklist for Manual Testing</a></li></ul></div></div></div></div></main></div></div></div><footer class="boutique-footer"><div class="footer-container"><div class="footer-col brand-col"><h3 class="footer-brand-name">Reshma Bangles</h3><p class="footer-description">Premium backend architecture and e-commerce platform API. Designed for elegance and seamless scaling.</p><div class="social-icons"><a href="https://www.instagram.com/reshmabangles" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/reshmabangles" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://www.youtube.com/reshmabangles" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div><div class="footer-col links-col"><h4 class="footer-heading">Company</h4><ul class="footer-links"><li><a href="/reshma-docs/docs/deployment/production-checklist">Support &amp; Deployments</a></li><li><a href="/reshma-docs/docs/legal/privacy-policy">Privacy Policy</a></li><li><a href="/reshma-docs/docs/legal/terms">Terms of Service</a></li><li><a href="/reshma-docs/docs/legal/license">System License</a></li></ul></div><div class="footer-col dev-col"><h4 class="footer-heading">Engineering</h4><div class="dev-info"><span class="dev-name">Md Afzal Ansari</span><span class="dev-title">Lead Developer</span></div><div class="dev-icons"><a href="https://github.com/Afzal14786" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/0x4f5a4c/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="https://leetcode.com/0x4f5a4c" target="_blank" rel="noopener noreferrer" aria-label="LeetCode"><i class="fas fa-code"></i></a><a href="https://iamafzal-dev.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Portfolio"><i class="fas fa-briefcase"></i></a><a href="mailto:mdafzal14777@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="footer-bottom"><p class="copyright-text">© <!-- -->2026<!-- --> Reshma Bangles &amp; Boutique. All rights reserved.</p></div></footer></div>
+</body>
+</html>

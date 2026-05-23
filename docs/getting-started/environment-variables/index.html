@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-getting-started/environment-variables" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Environment Variables Configuration Guide | Reshma‑Core Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://afzal14786.github.io/docs-reshma/img/app-logo.png"><meta data-rh="true" name="twitter:image" content="https://afzal14786.github.io/docs-reshma/img/app-logo.png"><meta data-rh="true" property="og:url" content="https://afzal14786.github.io/docs-reshma/docs/getting-started/environment-variables"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Environment Variables Configuration Guide | Reshma‑Core Documentation"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/docs-reshma/img/app-logo.png"><link data-rh="true" rel="canonical" href="https://afzal14786.github.io/docs-reshma/docs/getting-started/environment-variables"><link data-rh="true" rel="alternate" href="https://afzal14786.github.io/docs-reshma/docs/getting-started/environment-variables" hreflang="en"><link data-rh="true" rel="alternate" href="https://afzal14786.github.io/docs-reshma/docs/getting-started/environment-variables" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Environment Variables Configuration Guide","item":"https://afzal14786.github.io/docs-reshma/docs/getting-started/environment-variables"}]}</script><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Lato:wght@300;400;700&amp;display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="/docs-reshma/assets/css/styles.3818e395.css">
+<script src="/docs-reshma/assets/js/runtime~main.fab89455.js" defer="defer"></script>
+<script src="/docs-reshma/assets/js/main.dccac395.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/docs-reshma/img/app-logo.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/docs-reshma/"><div class="navbar__logo"><img src="/docs-reshma/img/app-logo.png" alt="Reshma Bangles Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/docs-reshma/img/app-logo.png" alt="Reshma Bangles Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Reshma‑Core</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs-reshma/docs/">Docs</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/Afzal14786" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs-reshma/docs/"><span title="🏠 Overview" class="linkLabel_WmDU">🏠 Overview</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs-reshma/docs/getting-started/local-development"><span title="🚀 Getting Started" class="categoryLinkLabel_W154">🚀 Getting Started</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/getting-started/local-development"><span title="local-development" class="linkLabel_WmDU">local-development</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/getting-started/docker-setup"><span title="docker-setup" class="linkLabel_WmDU">docker-setup</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs-reshma/docs/getting-started/environment-variables"><span title="Environment Variables Configuration Guide" class="linkLabel_WmDU">Environment Variables Configuration Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/getting-started/database-seeding"><span title="database-seeding" class="linkLabel_WmDU">database-seeding</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs-reshma/docs/api/authentication"><span title="📡 API Reference" class="categoryLinkLabel_W154">📡 API Reference</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/authentication"><span title="authentication" class="linkLabel_WmDU">authentication</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/rate-limiting"><span title="rate-limiting" class="linkLabel_WmDU">rate-limiting</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/error-codes"><span title="error-codes" class="linkLabel_WmDU">error-codes</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs-reshma/docs/api/modules/auth"><span title="📦 Modules" class="categoryLinkLabel_W154">📦 Modules</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs-reshma/docs/api/thunder-tests/auth-runbook"><span title="🧪 Testing (Runbooks)" class="categoryLinkLabel_W154">🧪 Testing (Runbooks)</span></a></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs-reshma/docs/architecture/system-overview"><span title="🏗️ Architecture" class="categoryLinkLabel_W154">🏗️ Architecture</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs-reshma/docs/deployment/production-checklist"><span title="☁️ Deployment" class="categoryLinkLabel_W154">☁️ Deployment</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs-reshma/docs/modules/auth-module"><span title="🧩 Module Deep Dives" class="categoryLinkLabel_W154">🧩 Module Deep Dives</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs-reshma/docs/glossary"><span title="📖 Glossary" class="linkLabel_WmDU">📖 Glossary</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/docs-reshma/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">🚀 Getting Started</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Environment Variables Configuration Guide</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Environment Variables Configuration Guide</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<p>The Reshma-Core backend utilizes a <strong>strict fail-fast initialization</strong> strategy. All environment variables are validated at runtime using a Zod schema located in <code>src/config/env.ts</code>. If any required variable is missing, empty, or incorrectly formatted, the Node.js process will terminate immediately with a descriptive validation error. This ensures that the system never runs in an insecure or partially configured state.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="validation-rules--defaults">Validation Rules &amp; Defaults<a href="#validation-rules--defaults" class="hash-link" aria-label="Direct link to Validation Rules &amp; Defaults" title="Direct link to Validation Rules &amp; Defaults" translate="no">​</a></h2>
+<p>The table below reflects the exact rules defined in <code>env.ts</code>. Variables marked <strong>Required</strong> must be present in your <code>.env</code> file – the server will not start without them.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left">Variable</th><th style="text-align:center">Required</th><th style="text-align:left">Default</th><th style="text-align:left">Validation / Notes</th></tr></thead><tbody><tr><td style="text-align:left"><code>PORT</code></td><td style="text-align:center">❌</td><td style="text-align:left"><code>&quot;5000&quot;</code></td><td style="text-align:left">String (coerced to number internally)</td></tr><tr><td style="text-align:left"><code>NODE_ENV</code></td><td style="text-align:center">❌</td><td style="text-align:left"><code>&quot;development&quot;</code></td><td style="text-align:left">Must be <code>development</code>, <code>production</code>, or <code>test</code></td></tr><tr><td style="text-align:left"><code>CLIENT_URL</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Valid URL (e.g., <code>http://localhost:3000</code>)</td></tr><tr><td style="text-align:left"><code>ADMIN_URL</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Valid URL (e.g., <code>http://localhost:3001</code>)</td></tr><tr><td style="text-align:left"><code>MONGO_URI</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Non‑empty string – MongoDB connection string</td></tr><tr><td style="text-align:left"><code>JWT_ACCESS_SECRET</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Min 10 characters – strong secret recommended</td></tr><tr><td style="text-align:left"><code>JWT_ACCESS_EXPIRES_IN</code></td><td style="text-align:center">❌</td><td style="text-align:left"><code>&quot;15m&quot;</code></td><td style="text-align:left">String (e.g., <code>15m</code>, <code>1h</code>, <code>7d</code>)</td></tr><tr><td style="text-align:left"><code>JWT_REFRESH_SECRET</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Min 10 characters – different from access secret</td></tr><tr><td style="text-align:left"><code>JWT_REFRESH_EXPIRES_IN</code></td><td style="text-align:center">❌</td><td style="text-align:left"><code>&quot;7d&quot;</code></td><td style="text-align:left">String</td></tr><tr><td style="text-align:left"><code>GOOGLE_CLIENT_ID</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Non‑empty string</td></tr><tr><td style="text-align:left"><code>GOOGLE_CLIENT_SECRET</code></td><td style="text-align:center">❌</td><td style="text-align:left">–</td><td style="text-align:left">Optional – only needed if using Google OAuth</td></tr><tr><td style="text-align:left"><code>GOOGLE_CALLBACK_URL</code></td><td style="text-align:center">❌</td><td style="text-align:left">–</td><td style="text-align:left">Optional – valid URL</td></tr><tr><td style="text-align:left"><code>CLOUDINARY_CLOUD_NAME</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Non‑empty</td></tr><tr><td style="text-align:left"><code>CLOUDINARY_API_KEY</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Non‑empty</td></tr><tr><td style="text-align:left"><code>CLOUDINARY_API_SECRET</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Non‑empty</td></tr><tr><td style="text-align:left"><code>REDIS_URL</code></td><td style="text-align:center">❌</td><td style="text-align:left"><code>&quot;redis://localhost:6379&quot;</code></td><td style="text-align:left">Valid Redis URL</td></tr><tr><td style="text-align:left"><code>REDIS_PASSWORD</code></td><td style="text-align:center">❌</td><td style="text-align:left">–</td><td style="text-align:left">Optional – used if Redis requires auth</td></tr><tr><td style="text-align:left"><code>SMTP_HOST</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Non‑empty string (e.g., <code>smtp.gmail.com</code>)</td></tr><tr><td style="text-align:left"><code>SMTP_PORT</code></td><td style="text-align:center">❌</td><td style="text-align:left"><code>587</code></td><td style="text-align:left">Coerced to number</td></tr><tr><td style="text-align:left"><code>SMTP_USER</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Valid email address</td></tr><tr><td style="text-align:left"><code>SMTP_PASS</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Non‑empty</td></tr><tr><td style="text-align:left"><code>EMAIL_FROM</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Non‑empty (e.g., <code>&quot;Reshma &lt;support@...&gt;&quot;</code>)</td></tr><tr><td style="text-align:left"><code>RAZORPAY_KEY_ID</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Non‑empty</td></tr><tr><td style="text-align:left"><code>RAZORPAY_KEY_SECRET</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Non‑empty</td></tr><tr><td style="text-align:left"><code>RAZORPAY_WEBHOOK_SECRET</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Non‑empty</td></tr><tr><td style="text-align:left"><code>SHIPROCKET_EMAIL</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Valid email</td></tr><tr><td style="text-align:left"><code>SHIPROCKET_PASSWORD</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Non‑empty</td></tr><tr><td style="text-align:left"><code>SHIPROCKET_API_BASE_URL</code></td><td style="text-align:center">❌</td><td style="text-align:left"><code>&quot;https://apiv2.shiprocket.in&quot;</code></td><td style="text-align:left">Valid URL</td></tr><tr><td style="text-align:left"><code>SHIPROCKET_WEBHOOK_SECRET</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Non‑empty</td></tr><tr><td style="text-align:left"><code>TYPESENSE_HOST</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Non‑empty (e.g., <code>localhost</code> or <code>xxx.typesense.net</code>)</td></tr><tr><td style="text-align:left"><code>TYPESENSE_PORT</code></td><td style="text-align:center">❌</td><td style="text-align:left"><code>8108</code></td><td style="text-align:left">Coerced to number</td></tr><tr><td style="text-align:left"><code>TYPESENSE_PROTOCOL</code></td><td style="text-align:center">❌</td><td style="text-align:left"><code>&quot;http&quot;</code></td><td style="text-align:left">Must be <code>http</code> or <code>https</code></td></tr><tr><td style="text-align:left"><code>TYPESENSE_API_KEY</code></td><td style="text-align:center">✅</td><td style="text-align:left">–</td><td style="text-align:left">Non‑empty – <strong>Admin</strong> API key (not search‑only)</td></tr></tbody></table>
+<blockquote>
+<p><strong>Important:</strong> <code>CLIENT_URL</code> and <code>ADMIN_URL</code> have <strong>no default</strong> – you must set them even for local development. They are used for CORS and email link generation.</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-core-server-settings">1. Core Server Settings<a href="#1-core-server-settings" class="hash-link" aria-label="Direct link to 1. Core Server Settings" title="Direct link to 1. Core Server Settings" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left">Variable</th><th style="text-align:left">Description</th><th style="text-align:left">Example</th></tr></thead><tbody><tr><td style="text-align:left"><code>PORT</code></td><td style="text-align:left">Port the Express server listens on</td><td style="text-align:left"><code>5000</code></td></tr><tr><td style="text-align:left"><code>NODE_ENV</code></td><td style="text-align:left">Environment – affects logging, error messages, and CORS</td><td style="text-align:left"><code>development</code> / <code>production</code> / <code>test</code></td></tr><tr><td style="text-align:left"><code>CLIENT_URL</code></td><td style="text-align:left">Origin of the main customer frontend (React/Next.js)</td><td style="text-align:left"><code>http://localhost:3000</code></td></tr><tr><td style="text-align:left"><code>ADMIN_URL</code></td><td style="text-align:left">Origin of the admin dashboard</td><td style="text-align:left"><code>http://localhost:3001</code></td></tr></tbody></table>
+<p><strong>Graceful Shutdown:</strong> The server traps <code>SIGTERM</code> and <code>SIGINT</code> signals, stops accepting new requests, drains active connections, and safely closes MongoDB &amp; Redis connections to prevent data corruption during deployments or container stops.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-database--infrastructure">2. Database &amp; Infrastructure<a href="#2-database--infrastructure" class="hash-link" aria-label="Direct link to 2. Database &amp; Infrastructure" title="Direct link to 2. Database &amp; Infrastructure" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left">Variable</th><th style="text-align:left">Description</th><th style="text-align:left">Local Example</th><th style="text-align:left">Docker Example</th></tr></thead><tbody><tr><td style="text-align:left"><code>MONGO_URI</code></td><td style="text-align:left">Full MongoDB connection string</td><td style="text-align:left"><code>mongodb://localhost:27017/reshma-boutique-dev</code></td><td style="text-align:left"><code>mongodb://admin:pass@reshma-db:27017/reshmabangles?authSource=admin</code></td></tr><tr><td style="text-align:left"><code>REDIS_URL</code></td><td style="text-align:left">Redis connection endpoint</td><td style="text-align:left"><code>redis://localhost:6379</code></td><td style="text-align:left"><code>redis://default:${REDIS_PASSWORD}@reshma-redis:6379</code></td></tr><tr><td style="text-align:left"><code>REDIS_PASSWORD</code></td><td style="text-align:left">Optional – for password‑protected Redis</td><td style="text-align:left">(leave blank)</td><td style="text-align:left">Set in <code>.env</code> and referenced in compose</td></tr></tbody></table>
+<p><strong>Additional Redis usage:</strong></p>
+<ul>
+<li class=""><strong>BullMQ queues</strong> – email dispatch, data export, search sync retries.</li>
+<li class=""><strong>Distributed locking</strong> – prevents duplicate cron jobs across multiple server instances.</li>
+<li class=""><strong>Rate limiting</strong> – stores request counts (when using <code>rate-limit-redis</code>).</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-twotoken-authentication-architecture">3. Two‑Token Authentication Architecture<a href="#3-twotoken-authentication-architecture" class="hash-link" aria-label="Direct link to 3. Two‑Token Authentication Architecture" title="Direct link to 3. Two‑Token Authentication Architecture" translate="no">​</a></h2>
+<p>The system uses short‑lived <strong>Access Tokens</strong> (in memory, <code>Authorization</code> header) and long‑lived <strong>Refresh Tokens</strong> (HttpOnly cookies).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left">Variable</th><th style="text-align:center">Required</th><th style="text-align:left">Recommended Value</th><th style="text-align:left">Generation Command</th></tr></thead><tbody><tr><td style="text-align:left"><code>JWT_ACCESS_SECRET</code></td><td style="text-align:center">✅</td><td style="text-align:left">64‑character hex</td><td style="text-align:left"><code>openssl rand -hex 32</code></td></tr><tr><td style="text-align:left"><code>JWT_ACCESS_EXPIRES_IN</code></td><td style="text-align:center">❌</td><td style="text-align:left"><code>15m</code></td><td style="text-align:left">–</td></tr><tr><td style="text-align:left"><code>JWT_REFRESH_SECRET</code></td><td style="text-align:center">✅</td><td style="text-align:left">64‑character hex (different from above)</td><td style="text-align:left"><code>openssl rand -hex 32</code></td></tr><tr><td style="text-align:left"><code>JWT_REFRESH_EXPIRES_IN</code></td><td style="text-align:center">❌</td><td style="text-align:left"><code>7d</code></td><td style="text-align:left">–</td></tr></tbody></table>
+<blockquote>
+<p><strong>Security:</strong> Never use the same secret for access and refresh tokens. Rotate secrets periodically in production.</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-social-authentication-google-oauth">4. Social Authentication (Google OAuth)<a href="#4-social-authentication-google-oauth" class="hash-link" aria-label="Direct link to 4. Social Authentication (Google OAuth)" title="Direct link to 4. Social Authentication (Google OAuth)" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left">Variable</th><th style="text-align:center">Required</th><th style="text-align:left">Notes</th></tr></thead><tbody><tr><td style="text-align:left"><code>GOOGLE_CLIENT_ID</code></td><td style="text-align:center">✅</td><td style="text-align:left">Obtained from Google Cloud Console</td></tr><tr><td style="text-align:left"><code>GOOGLE_CLIENT_SECRET</code></td><td style="text-align:center">❌</td><td style="text-align:left">Only needed if you enable Google login</td></tr><tr><td style="text-align:left"><code>GOOGLE_CALLBACK_URL</code></td><td style="text-align:center">❌</td><td style="text-align:left">Default callback route: <code>/api/v1/auth/google/callback</code></td></tr></tbody></table>
+<blockquote>
+<p>If you are not using Google OAuth, you can leave the optional variables blank – but <code>GOOGLE_CLIENT_ID</code> must still have a dummy value to pass validation (the auth routes will be unavailable).</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-media-pipeline-cloudinary">5. Media Pipeline (Cloudinary)<a href="#5-media-pipeline-cloudinary" class="hash-link" aria-label="Direct link to 5. Media Pipeline (Cloudinary)" title="Direct link to 5. Media Pipeline (Cloudinary)" translate="no">​</a></h2>
+<p>All images (product photos, user avatars) are uploaded directly from memory buffers to Cloudinary.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left">Variable</th><th style="text-align:center">Required</th><th style="text-align:left">Where to find</th></tr></thead><tbody><tr><td style="text-align:left"><code>CLOUDINARY_CLOUD_NAME</code></td><td style="text-align:center">✅</td><td style="text-align:left">Cloudinary Dashboard</td></tr><tr><td style="text-align:left"><code>CLOUDINARY_API_KEY</code></td><td style="text-align:center">✅</td><td style="text-align:left">Cloudinary Dashboard</td></tr><tr><td style="text-align:left"><code>CLOUDINARY_API_SECRET</code></td><td style="text-align:center">✅</td><td style="text-align:left">Cloudinary Dashboard (keep secret)</td></tr></tbody></table>
+<p>The integration is defined in <a class="" href="/docs-reshma/src/config/cloudinary.ts"><code>src/config/cloudinary.ts</code></a>. It automatically converts uploaded images to WebP format for bandwidth savings.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-notification-engine-smtp">6. Notification Engine (SMTP)<a href="#6-notification-engine-smtp" class="hash-link" aria-label="Direct link to 6. Notification Engine (SMTP)" title="Direct link to 6. Notification Engine (SMTP)" translate="no">​</a></h2>
+<p>Used for transactional emails (OTP, password change confirmation, order updates, data export).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left">Variable</th><th style="text-align:center">Required</th><th style="text-align:left">Example</th></tr></thead><tbody><tr><td style="text-align:left"><code>SMTP_HOST</code></td><td style="text-align:center">✅</td><td style="text-align:left"><code>smtp.gmail.com</code></td></tr><tr><td style="text-align:left"><code>SMTP_PORT</code></td><td style="text-align:center">❌</td><td style="text-align:left"><code>587</code> (default)</td></tr><tr><td style="text-align:left"><code>SMTP_USER</code></td><td style="text-align:center">✅</td><td style="text-align:left"><code>support@reshmabangles.com</code></td></tr><tr><td style="text-align:left"><code>SMTP_PASS</code></td><td style="text-align:center">✅</td><td style="text-align:left">For Gmail: 16‑character <strong>App Password</strong></td></tr><tr><td style="text-align:left"><code>EMAIL_FROM</code></td><td style="text-align:center">✅</td><td style="text-align:left"><code>&quot;Reshma Bangles &lt;support@reshmabangles.com&gt;&quot;</code></td></tr></tbody></table>
+<blockquote>
+<p><strong>Gmail users:</strong> Enable 2‑Factor Authentication and generate an <strong>App Password</strong>. Your regular Gmail password will not work.</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-payment-gateway-razorpay">7. Payment Gateway (Razorpay)<a href="#7-payment-gateway-razorpay" class="hash-link" aria-label="Direct link to 7. Payment Gateway (Razorpay)" title="Direct link to 7. Payment Gateway (Razorpay)" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left">Variable</th><th style="text-align:center">Required</th><th style="text-align:left">Format</th></tr></thead><tbody><tr><td style="text-align:left"><code>RAZORPAY_KEY_ID</code></td><td style="text-align:center">✅</td><td style="text-align:left">Starts with <code>rzp_test_</code> or <code>rzp_live_</code></td></tr><tr><td style="text-align:left"><code>RAZORPAY_KEY_SECRET</code></td><td style="text-align:center">✅</td><td style="text-align:left">Secret from Razorpay Dashboard</td></tr><tr><td style="text-align:left"><code>RAZORPAY_WEBHOOK_SECRET</code></td><td style="text-align:center">✅</td><td style="text-align:left">Used to verify webhook signatures</td></tr></tbody></table>
+<p>Webhook secret is mandatory – even for local testing you can set a dummy value, but the endpoint will validate it.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="8-logistics--shipping-shiprocket">8. Logistics &amp; Shipping (Shiprocket)<a href="#8-logistics--shipping-shiprocket" class="hash-link" aria-label="Direct link to 8. Logistics &amp; Shipping (Shiprocket)" title="Direct link to 8. Logistics &amp; Shipping (Shiprocket)" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left">Variable</th><th style="text-align:center">Required</th><th style="text-align:left">Notes</th></tr></thead><tbody><tr><td style="text-align:left"><code>SHIPROCKET_EMAIL</code></td><td style="text-align:center">✅</td><td style="text-align:left">Email used to log into Shiprocket</td></tr><tr><td style="text-align:left"><code>SHIPROCKET_PASSWORD</code></td><td style="text-align:center">✅</td><td style="text-align:left">Shiprocket account password</td></tr><tr><td style="text-align:left"><code>SHIPROCKET_API_BASE_URL</code></td><td style="text-align:center">❌</td><td style="text-align:left">Defaults to production API</td></tr><tr><td style="text-align:left"><code>SHIPROCKET_WEBHOOK_SECRET</code></td><td style="text-align:center">✅</td><td style="text-align:left">Used to verify delivery status callbacks</td></tr></tbody></table>
+<blockquote>
+<p>These are required for shipping label generation and order tracking. For local development without Shiprocket, you can use dummy values – but the integration will log errors.</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="9-search-engine-typesense">9. Search Engine (Typesense)<a href="#9-search-engine-typesense" class="hash-link" aria-label="Direct link to 9. Search Engine (Typesense)" title="Direct link to 9. Search Engine (Typesense)" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left">Variable</th><th style="text-align:center">Required</th><th style="text-align:left">Local (Docker)</th><th style="text-align:left">Cloud</th></tr></thead><tbody><tr><td style="text-align:left"><code>TYPESENSE_HOST</code></td><td style="text-align:center">✅</td><td style="text-align:left"><code>localhost</code> or <code>reshma-typesense</code></td><td style="text-align:left"><code>xxx.a1.typesense.net</code></td></tr><tr><td style="text-align:left"><code>TYPESENSE_PORT</code></td><td style="text-align:center">❌</td><td style="text-align:left"><code>8108</code></td><td style="text-align:left"><code>443</code></td></tr><tr><td style="text-align:left"><code>TYPESENSE_PROTOCOL</code></td><td style="text-align:center">❌</td><td style="text-align:left"><code>http</code></td><td style="text-align:left"><code>https</code></td></tr><tr><td style="text-align:left"><code>TYPESENSE_API_KEY</code></td><td style="text-align:center">✅</td><td style="text-align:left">any strong string (must match compose)</td><td style="text-align:left">Admin API key from Typesense Cloud</td></tr></tbody></table>
+<p><strong>Important:</strong> The API key must be the <strong>Admin</strong> key (capable of creating collections and indexing). The search‑only key will cause schema initialisation to fail.</p>
+<p><strong>Sync resilience:</strong> Failed Typesense operations (e.g., network timeout) are automatically queued in BullMQ for retry with exponential backoff – see <a class="" href="/docs-reshma/src/config/typesense.ts"><code>src/config/typesense.ts</code></a>.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quick-start-minimal-env-for-local-development-manual">Quick Start: Minimal <code>.env</code> for Local Development (Manual)<a href="#quick-start-minimal-env-for-local-development-manual" class="hash-link" aria-label="Direct link to quick-start-minimal-env-for-local-development-manual" title="Direct link to quick-start-minimal-env-for-local-development-manual" translate="no">​</a></h2>
+<div class="language-env codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-env codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain"># Core</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">PORT=5000</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">NODE_ENV=development</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">CLIENT_URL=http://localhost:3000</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">ADMIN_URL=http://localhost:3001</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Database</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">MONGO_URI=mongodb://localhost:27017/reshma-boutique-dev</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Redis (no password)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">REDIS_URL=redis://localhost:6379</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># JWT (generate actual secrets)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">JWT_ACCESS_SECRET=5f8d9a3c7e2b1f6a4d8c0e9b7a3f2d6c1e8b4a7f9d2c5b8e1a6f4c3d7e9b2a1</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">JWT_REFRESH_SECRET=7b2e1f6a4d8c0e9b7a3f2d6c1e8b4a7f9d2c5b8e1a6f4c3d7e9b2a1f5c8d2e</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Typesense (local binary or Docker)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">TYPESENSE_HOST=localhost</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">TYPESENSE_PORT=8108</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">TYPESENSE_PROTOCOL=http</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">TYPESENSE_API_KEY=your_super_secret_key</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Cloudinary (required, but can be dummy for local testing)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">CLOUDINARY_CLOUD_NAME=dummy</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">CLOUDINARY_API_KEY=dummy</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">CLOUDINARY_API_SECRET=dummy</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># SMTP (optional – use ethereal.email for testing)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SMTP_HOST=smtp.ethereal.email</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SMTP_PORT=587</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SMTP_USER=dummy@ethereal.email</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SMTP_PASS=dummy</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">EMAIL_FROM=&quot;Test &lt;test@example.com&gt;&quot;</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Razorpay (required but can be dummy)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">RAZORPAY_KEY_ID=rzp_test_dummy</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">RAZORPAY_KEY_SECRET=dummy</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">RAZORPAY_WEBHOOK_SECRET=dummy</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Shiprocket (required but can be dummy)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SHIPROCKET_EMAIL=dummy@example.com</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SHIPROCKET_PASSWORD=dummy</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">SHIPROCKET_WEBHOOK_SECRET=dummy</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"># Google OAuth (required but can be dummy – login will not work)</span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">GOOGLE_CLIENT_ID=dummy.apps.googleusercontent.com</span><br></div></code></pre></div></div>
+<blockquote>
+<p>Save this as <code>.env</code> in the project root. Replace JWT secrets with your own generated values.</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="docker-compose-overrides">Docker Compose Overrides<a href="#docker-compose-overrides" class="hash-link" aria-label="Direct link to Docker Compose Overrides" title="Direct link to Docker Compose Overrides" translate="no">​</a></h2>
+<p>When using Docker (see <code>docker-compose.yml</code>), the following environment variables are <strong>automatically set</strong> or <strong>overridden</strong> inside containers – you do not need to set them in <code>.env</code>:</p>
+<ul>
+<li class=""><code>MONGO_URI</code> → <code>mongodb://reshma-db:27017/reshmabangles</code></li>
+<li class=""><code>REDIS_URL</code> → <code>redis://reshma-redis:6379</code></li>
+<li class=""><code>TYPESENSE_HOST</code> → <code>reshma-typesense</code></li>
+</ul>
+<p>However, you <strong>must</strong> still define in <code>.env</code>:</p>
+<ul>
+<li class=""><code>JWT_ACCESS_SECRET</code> / <code>JWT_REFRESH_SECRET</code></li>
+<li class=""><code>TYPESENSE_API_KEY</code> (must match the one in <code>docker-compose.yml</code>)</li>
+</ul>
+<p>For production <code>docker-compose.prod.yml</code>, variables like <code>MONGO_INITDB_ROOT_USERNAME</code> and <code>REDIS_PASSWORD</code> are used – those are also read from <code>.env</code>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="troubleshooting-validation-errors">Troubleshooting Validation Errors<a href="#troubleshooting-validation-errors" class="hash-link" aria-label="Direct link to Troubleshooting Validation Errors" title="Direct link to Troubleshooting Validation Errors" translate="no">​</a></h2>
+<p>If the server fails to start with an error like:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Invalid environment variables: { &quot;MONGO_URI&quot;: { &quot;_errors&quot;: [&quot;Required&quot;] } }</span><br></div></code></pre></div></div>
+<p><strong>Solution:</strong> Add the missing variable to your <code>.env</code> file.</p>
+<p>Common errors and fixes</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Error</th><th>Likely Cause</th><th>Fix</th></tr></thead><tbody><tr><td><code>MONGO_URI: Required</code></td><td>Missing <code>MONGO_URI</code> in <code>.env</code></td><td>Add <code>MONGO_URI=mongodb://localhost:27017/reshma-boutique-dev</code></td></tr><tr><td><code>CLIENT_URL: Invalid url</code></td><td><code>CLIENT_URL</code> is not a valid URL</td><td>Use <code>http://localhost:3000</code> (no trailing slash)</td></tr><tr><td><code>JWT_ACCESS_SECRET: At least 10 characters</code></td><td>Secret too short</td><td>Generate a 32‑byte hex string: <code>openssl rand -hex 32</code></td></tr><tr><td><code>TYPESENSE_HOST: Required</code></td><td>Typesense variables missing</td><td>Add all four <code>TYPESENSE_*</code> variables (see example)</td></tr><tr><td><code>SMTP_USER: Invalid email</code></td><td>SMTP user is not a valid email</td><td>Use a real email address or a dummy like <code>test@example.com</code></td></tr></tbody></table>
+<blockquote>
+<p><strong>Note:</strong> If you are <strong>not using</strong> a particular integration (e.g., Shiprocket), you can still provide dummy values that pass validation (non‑empty, correct format) – the code will log errors but will not crash.</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="security-best-practices">Security Best Practices<a href="#security-best-practices" class="hash-link" aria-label="Direct link to Security Best Practices" title="Direct link to Security Best Practices" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Never commit</strong> <code>.env</code> – it is already listed in <code>.gitignore</code>. Use <code>.env.example</code> as a template.</li>
+<li class=""><strong>Rotate secrets</strong> – change <code>JWT_ACCESS_SECRET</code> and <code>JWT_REFRESH_SECRET</code> periodically in production.</li>
+<li class=""><strong>Use different databases</strong> – separate development and production MongoDB instances.</li>
+<li class=""><strong>Limit API key scope</strong> – the Typesense API key should be the <strong>Admin</strong> key for indexing, but use a Search‑only key in the frontend.</li>
+<li class=""><strong>SMTP App Password</strong> – never use your primary email password; generate an App Password for Gmail/Outlook.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="code-references">Code References<a href="#code-references" class="hash-link" aria-label="Direct link to Code References" title="Direct link to Code References" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>File</th><th>Purpose</th></tr></thead><tbody><tr><td><code>src/config/env.ts</code></td><td>Validation schema for environment variables</td></tr><tr><td><code>src/config/cloudinary.ts</code></td><td>Cloudinary integration</td></tr><tr><td><code>src/config/redis.ts</code></td><td>Redis client</td></tr><tr><td><code>src/config/typesense.ts</code></td><td>Typesense manager</td></tr></tbody></table>
+<hr>
+<p><em>The Reshma-Core Team</em></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/Afzal14786/docs-reshma/edit/main/docs/getting-started/environment-variables.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs-reshma/docs/getting-started/docker-setup"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">docker-setup</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs-reshma/docs/getting-started/database-seeding"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">database-seeding</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#validation-rules--defaults" class="table-of-contents__link toc-highlight">Validation Rules &amp; Defaults</a></li><li><a href="#1-core-server-settings" class="table-of-contents__link toc-highlight">1. Core Server Settings</a></li><li><a href="#2-database--infrastructure" class="table-of-contents__link toc-highlight">2. Database &amp; Infrastructure</a></li><li><a href="#3-twotoken-authentication-architecture" class="table-of-contents__link toc-highlight">3. Two‑Token Authentication Architecture</a></li><li><a href="#4-social-authentication-google-oauth" class="table-of-contents__link toc-highlight">4. Social Authentication (Google OAuth)</a></li><li><a href="#5-media-pipeline-cloudinary" class="table-of-contents__link toc-highlight">5. Media Pipeline (Cloudinary)</a></li><li><a href="#6-notification-engine-smtp" class="table-of-contents__link toc-highlight">6. Notification Engine (SMTP)</a></li><li><a href="#7-payment-gateway-razorpay" class="table-of-contents__link toc-highlight">7. Payment Gateway (Razorpay)</a></li><li><a href="#8-logistics--shipping-shiprocket" class="table-of-contents__link toc-highlight">8. Logistics &amp; Shipping (Shiprocket)</a></li><li><a href="#9-search-engine-typesense" class="table-of-contents__link toc-highlight">9. Search Engine (Typesense)</a></li><li><a href="#quick-start-minimal-env-for-local-development-manual" class="table-of-contents__link toc-highlight">Quick Start: Minimal <code>.env</code> for Local Development (Manual)</a></li><li><a href="#docker-compose-overrides" class="table-of-contents__link toc-highlight">Docker Compose Overrides</a></li><li><a href="#troubleshooting-validation-errors" class="table-of-contents__link toc-highlight">Troubleshooting Validation Errors</a></li><li><a href="#security-best-practices" class="table-of-contents__link toc-highlight">Security Best Practices</a></li><li><a href="#code-references" class="table-of-contents__link toc-highlight">Code References</a></li></ul></div></div></div></div></main></div></div></div><footer class="boutique-footer"><div class="footer-container"><div class="footer-col brand-col"><h3 class="footer-brand-name">Reshma Bangles</h3><p class="footer-description">Premium backend architecture and e-commerce platform API. Designed for elegance and seamless scaling.</p><div class="social-icons"><a href="https://www.instagram.com/reshmabangles" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/reshmabangles" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://www.youtube.com/reshmabangles" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div><div class="footer-col links-col"><h4 class="footer-heading">Company</h4><ul class="footer-links"><li><a href="/reshma-docs/docs/deployment/production-checklist">Support &amp; Deployments</a></li><li><a href="/reshma-docs/docs/legal/privacy-policy">Privacy Policy</a></li><li><a href="/reshma-docs/docs/legal/terms">Terms of Service</a></li><li><a href="/reshma-docs/docs/legal/license">System License</a></li></ul></div><div class="footer-col dev-col"><h4 class="footer-heading">Engineering</h4><div class="dev-info"><span class="dev-name">Md Afzal Ansari</span><span class="dev-title">Lead Developer</span></div><div class="dev-icons"><a href="https://github.com/Afzal14786" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/0x4f5a4c/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="https://leetcode.com/0x4f5a4c" target="_blank" rel="noopener noreferrer" aria-label="LeetCode"><i class="fas fa-code"></i></a><a href="https://iamafzal-dev.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Portfolio"><i class="fas fa-briefcase"></i></a><a href="mailto:mdafzal14777@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="footer-bottom"><p class="copyright-text">© <!-- -->2026<!-- --> Reshma Bangles &amp; Boutique. All rights reserved.</p></div></footer></div>
+</body>
+</html>

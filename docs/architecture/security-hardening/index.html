@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-architecture/security-hardening" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">security-hardening | Reshma‑Core Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://afzal14786.github.io/docs-reshma/img/app-logo.png"><meta data-rh="true" name="twitter:image" content="https://afzal14786.github.io/docs-reshma/img/app-logo.png"><meta data-rh="true" property="og:url" content="https://afzal14786.github.io/docs-reshma/docs/architecture/security-hardening"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="security-hardening | Reshma‑Core Documentation"><meta data-rh="true" name="description" content="# Security Hardening &amp; Protocols"><meta data-rh="true" property="og:description" content="# Security Hardening &amp; Protocols"><link data-rh="true" rel="icon" href="/docs-reshma/img/app-logo.png"><link data-rh="true" rel="canonical" href="https://afzal14786.github.io/docs-reshma/docs/architecture/security-hardening"><link data-rh="true" rel="alternate" href="https://afzal14786.github.io/docs-reshma/docs/architecture/security-hardening" hreflang="en"><link data-rh="true" rel="alternate" href="https://afzal14786.github.io/docs-reshma/docs/architecture/security-hardening" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"security-hardening","item":"https://afzal14786.github.io/docs-reshma/docs/architecture/security-hardening"}]}</script><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Lato:wght@300;400;700&amp;display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="/docs-reshma/assets/css/styles.3818e395.css">
+<script src="/docs-reshma/assets/js/runtime~main.fab89455.js" defer="defer"></script>
+<script src="/docs-reshma/assets/js/main.dccac395.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/docs-reshma/img/app-logo.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/docs-reshma/"><div class="navbar__logo"><img src="/docs-reshma/img/app-logo.png" alt="Reshma Bangles Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/docs-reshma/img/app-logo.png" alt="Reshma Bangles Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Reshma‑Core</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs-reshma/docs/">Docs</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/Afzal14786" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs-reshma/docs/"><span title="🏠 Overview" class="linkLabel_WmDU">🏠 Overview</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs-reshma/docs/getting-started/local-development"><span title="🚀 Getting Started" class="categoryLinkLabel_W154">🚀 Getting Started</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/getting-started/local-development"><span title="local-development" class="linkLabel_WmDU">local-development</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/getting-started/docker-setup"><span title="docker-setup" class="linkLabel_WmDU">docker-setup</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/getting-started/environment-variables"><span title="Environment Variables Configuration Guide" class="linkLabel_WmDU">Environment Variables Configuration Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/getting-started/database-seeding"><span title="database-seeding" class="linkLabel_WmDU">database-seeding</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs-reshma/docs/api/authentication"><span title="📡 API Reference" class="categoryLinkLabel_W154">📡 API Reference</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/authentication"><span title="authentication" class="linkLabel_WmDU">authentication</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/rate-limiting"><span title="rate-limiting" class="linkLabel_WmDU">rate-limiting</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/error-codes"><span title="error-codes" class="linkLabel_WmDU">error-codes</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs-reshma/docs/api/modules/auth"><span title="📦 Modules" class="categoryLinkLabel_W154">📦 Modules</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs-reshma/docs/api/thunder-tests/auth-runbook"><span title="🧪 Testing (Runbooks)" class="categoryLinkLabel_W154">🧪 Testing (Runbooks)</span></a></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs-reshma/docs/architecture/system-overview"><span title="🏗️ Architecture" class="categoryLinkLabel_W154">🏗️ Architecture</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/system-overview"><span title="system-overview" class="linkLabel_WmDU">system-overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/auth-architecture"><span title="auth-architecture" class="linkLabel_WmDU">auth-architecture</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/database-design"><span title="database-design" class="linkLabel_WmDU">database-design</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/product-catalog"><span title="product-catalog" class="linkLabel_WmDU">product-catalog</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs-reshma/docs/architecture/security-hardening"><span title="security-hardening" class="linkLabel_WmDU">security-hardening</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/middleware-and-validation"><span title="middleware-and-validation" class="linkLabel_WmDU">middleware-and-validation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/payment-integration"><span title="payment-integration" class="linkLabel_WmDU">payment-integration</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/legal-tax-compliance"><span title="legal-tax-compliance" class="linkLabel_WmDU">legal-tax-compliance</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/edge-cache"><span title="edge-cache" class="linkLabel_WmDU">edge-cache</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/background-jobs-and-cron"><span title="background-jobs-and-cron" class="linkLabel_WmDU">background-jobs-and-cron</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/logistics-and-shipping"><span title="logistics-and-shipping" class="linkLabel_WmDU">logistics-and-shipping</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/media-and-storage"><span title="media-and-storage" class="linkLabel_WmDU">media-and-storage</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/devops-and-infrastructure"><span title="devops-and-infrastructure" class="linkLabel_WmDU">devops-and-infrastructure</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs-reshma/docs/deployment/production-checklist"><span title="☁️ Deployment" class="categoryLinkLabel_W154">☁️ Deployment</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs-reshma/docs/modules/auth-module"><span title="🧩 Module Deep Dives" class="categoryLinkLabel_W154">🧩 Module Deep Dives</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs-reshma/docs/glossary"><span title="📖 Glossary" class="linkLabel_WmDU">📖 Glossary</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/docs-reshma/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">🏗️ Architecture</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">security-hardening</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><div align="center">
+<header><h1>Security Hardening &amp; Protocols</h1></header>
+<p><strong>The Zero-Trust security architecture and defense-in-depth strategies implemented across the Reshma-Core backend.</strong></p>
+<p><a href="#" class=""><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Helmet-HTTP_Headers-blue?style=flat" alt="Helmet" class="img_ev3q"></a>
+<a href="https://zod.dev/" target="_blank" rel="noopener noreferrer" class=""><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Zod-Payload_Sanitization-3068b7?style=flat" alt="Zod" class="img_ev3q"></a>
+<a href="#" class=""><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Rate_Limit-Brute_Force_Protection-red?style=flat" alt="RateLimit" class="img_ev3q"></a>
+<a href="https://codeql.github.com/" target="_blank" rel="noopener noreferrer" class=""><img decoding="async" loading="lazy" src="https://img.shields.io/badge/CodeQL-Security_Scan-1C2C4E?style=flat" alt="CodeQL" class="img_ev3q"></a></p>
+</div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-core-security-philosophy">1. Core Security Philosophy<a href="#1-core-security-philosophy" class="hash-link" aria-label="Direct link to 1. Core Security Philosophy" title="Direct link to 1. Core Security Philosophy" translate="no">​</a></h2>
+<p>Reshma-Core operates on a <strong>Zero-Trust</strong> model. Every incoming request is treated as potentially hostile. Security is enforced in layers:</p>
+<ol>
+<li class=""><strong>Network/Transport</strong> – global rate limiting (Redis‑backed), Helmet headers.</li>
+<li class=""><strong>Application Boundary</strong> – payload size limits, raw stream interceptors, Zod validation, NoSQL injection sanitisation.</li>
+<li class=""><strong>Session</strong> – stateless JWTs, Redis blacklist, <code>HttpOnly</code> cookies.</li>
+<li class=""><strong>Data</strong> – cryptographic HMAC handshakes, strict database projections, atomic operations.</li>
+</ol>
+<p>All security‑critical code is scanned by <strong>CodeQL</strong> on every push and pull request.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-layer-1-http--transport-defences">2. Layer 1: HTTP &amp; Transport Defences<a href="#2-layer-1-http--transport-defences" class="hash-link" aria-label="Direct link to 2. Layer 1: HTTP &amp; Transport Defences" title="Direct link to 2. Layer 1: HTTP &amp; Transport Defences" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="helmetjs-header-protection">Helmet.js (Header Protection)<a href="#helmetjs-header-protection" class="hash-link" aria-label="Direct link to Helmet.js (Header Protection)" title="Direct link to Helmet.js (Header Protection)" translate="no">​</a></h3>
+<ul>
+<li class="">Removes <code>X-Powered-By</code> (prevents fingerprinting).</li>
+<li class="">Sets <code>X-Content-Type-Options: nosniff</code> (MIME sniffing).</li>
+<li class="">Sets <code>X-Frame-Options: DENY</code> (clickjacking).</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="distributed-rate-limiting-rate-limitmiddlewarets">Distributed Rate Limiting (<code>rate-limit.middleware.ts</code>)<a href="#distributed-rate-limiting-rate-limitmiddlewarets" class="hash-link" aria-label="Direct link to distributed-rate-limiting-rate-limitmiddlewarets" title="Direct link to distributed-rate-limiting-rate-limitmiddlewarets" translate="no">​</a></h3>
+<p>All rate limiters use a <strong>Redis central store</strong> to synchronise strike counters across multiple containers.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Limiter</th><th>Window</th><th>Max Requests</th><th>Target</th></tr></thead><tbody><tr><td><code>standardLimiter</code></td><td>15 min</td><td>100</td><td>All API routes</td></tr><tr><td><code>authLimiter</code></td><td>1 hour</td><td>10</td><td><code>/auth/*</code> (brute‑force)</td></tr><tr><td><code>checkoutLimiter</code></td><td>1 hour</td><td>5</td><td><code>/orders/checkout</code> (card testing)</td></tr><tr><td><code>healthLimiter</code></td><td>15 min</td><td>3000</td><td><code>/health</code> (local memory, bypasses Redis)</td></tr></tbody></table>
+<blockquote>
+<p><strong>CodeQL CWE-770 (Allocation of Resources Without Limits) mitigated</strong> – each limiter has a unique <code>requestPropertyName</code> to prevent double‑counting and is applied before expensive database lookups.</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-layer-2-payload--injection-protection">3. Layer 2: Payload &amp; Injection Protection<a href="#3-layer-2-payload--injection-protection" class="hash-link" aria-label="Direct link to 3. Layer 2: Payload &amp; Injection Protection" title="Direct link to 3. Layer 2: Payload &amp; Injection Protection" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="ram-exhaustion-prevention-oom">RAM Exhaustion Prevention (OOM)<a href="#ram-exhaustion-prevention-oom" class="hash-link" aria-label="Direct link to RAM Exhaustion Prevention (OOM)" title="Direct link to RAM Exhaustion Prevention (OOM)" translate="no">​</a></h3>
+<ul>
+<li class=""><code>express.json({ limit: &#x27;10kb&#x27; })</code> – any JSON body larger than 10 KB is rejected before parsing.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="rawbody-interceptor-hmac-integrity">Raw‑Body Interceptor (HMAC Integrity)<a href="#rawbody-interceptor-hmac-integrity" class="hash-link" aria-label="Direct link to Raw‑Body Interceptor (HMAC Integrity)" title="Direct link to Raw‑Body Interceptor (HMAC Integrity)" translate="no">​</a></h3>
+<ul>
+<li class="">A global <code>verify</code> hook captures the original request buffer as <code>req.rawBody</code>.</li>
+<li class="">Used by Razorpay and Shiprocket webhooks to verify HMAC signatures without JSON‑parsing corruption.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="nosql-injection--prototype-pollution-defence">NoSQL Injection &amp; Prototype Pollution Defence<a href="#nosql-injection--prototype-pollution-defence" class="hash-link" aria-label="Direct link to NoSQL Injection &amp; Prototype Pollution Defence" title="Direct link to NoSQL Injection &amp; Prototype Pollution Defence" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="twolayer-strategy">Two‑Layer Strategy<a href="#twolayer-strategy" class="hash-link" aria-label="Direct link to Two‑Layer Strategy" title="Direct link to Two‑Layer Strategy" translate="no">​</a></h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Layer</th><th>Implementation</th><th>Target</th></tr></thead><tbody><tr><td><strong>Route level</strong></td><td><code>Sanitizer.sanitize()</code> inside <code>validate.middleware.ts</code></td><td>Strips keys starting with <code>$</code> or containing <code>.</code>, and removes <code>__proto__</code>, <code>constructor</code>, <code>prototype</code>.</td></tr><tr><td><strong>App level</strong></td><td><code>express-mongo-sanitize</code> (global middleware)</td><td>Recursively scans <code>req.body</code>, <code>query</code>, <code>params</code> for malicious operators.</td></tr></tbody></table>
+<p><strong>From <code>sanitizer.ts</code>:</strong></p>
+<div class="language-typescript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-typescript codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">export</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">class</span><span class="token plain"> </span><span class="token class-name">Sanitizer</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token keyword" style="color:#00009f">private</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">static</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">readonly</span><span class="token plain"> </span><span class="token constant" style="color:#36acaa">PROHIBITED_KEYS</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token string" style="color:#e3116c">&quot;__proto__&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;constructor&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;prototype&quot;</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token keyword" style="color:#00009f">public</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">static</span><span class="token plain"> </span><span class="token generic-function function" style="color:#d73a49">sanitize</span><span class="token generic-function generic class-name operator" style="color:#393A34">&lt;</span><span class="token generic-function generic class-name constant" style="color:#36acaa">T</span><span class="token generic-function generic class-name operator" style="color:#393A34">&gt;</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">target</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token constant" style="color:#36acaa">T</span><span class="token punctuation" style="color:#393A34">)</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token constant" style="color:#36acaa">T</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token comment" style="color:#999988;font-style:italic">// recursively removes dangerous keys</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></div></code></pre></div></div>
+<blockquote>
+<p><strong>Mitigates:</strong> CWE-943 (Improper Neutralization of Special Elements in Data Query Logic) and CWE-1321 (Improperly Controlled Modification of Object Prototype Attributes).</p>
+</blockquote>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="zod-validation-firewall">Zod Validation Firewall<a href="#zod-validation-firewall" class="hash-link" aria-label="Direct link to Zod Validation Firewall" title="Direct link to Zod Validation Firewall" translate="no">​</a></h3>
+<p>Every request payload is validated by a Zod schema (e.g., <code>RegisterSchema</code>, <code>CreateProductSchema</code>). Undocumented fields are stripped; type mismatches and missing required fields return <code>400 Bad Request</code>.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-layer-3-identity--session-security">4. Layer 3: Identity &amp; Session Security<a href="#4-layer-3-identity--session-security" class="hash-link" aria-label="Direct link to 4. Layer 3: Identity &amp; Session Security" title="Direct link to 4. Layer 3: Identity &amp; Session Security" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="xss--csrf-immunity">XSS &amp; CSRF Immunity<a href="#xss--csrf-immunity" class="hash-link" aria-label="Direct link to XSS &amp; CSRF Immunity" title="Direct link to XSS &amp; CSRF Immunity" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Access tokens</strong> – stored in frontend memory (React state), never in <code>localStorage</code>.</li>
+<li class=""><strong>Refresh tokens</strong> – <code>HttpOnly</code>, <code>Secure</code>, <code>SameSite=Strict</code> cookies – invisible to JavaScript.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="token-hijack-mitigation-redis-blacklist">Token Hijack Mitigation (Redis Blacklist)<a href="#token-hijack-mitigation-redis-blacklist" class="hash-link" aria-label="Direct link to Token Hijack Mitigation (Redis Blacklist)" title="Direct link to Token Hijack Mitigation (Redis Blacklist)" translate="no">​</a></h3>
+<ul>
+<li class="">On logout, the refresh token’s signature is stored in Redis with a TTL equal to its remaining lifespan.</li>
+<li class="">The <code>protect</code> middleware checks this blacklist on every authenticated request.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="authentication-middleware-protect">Authentication Middleware (<code>protect</code>)<a href="#authentication-middleware-protect" class="hash-link" aria-label="Direct link to authentication-middleware-protect" title="Direct link to authentication-middleware-protect" translate="no">​</a></h3>
+<ul>
+<li class="">Extracts JWT from <code>Authorization</code> header or signed cookie.</li>
+<li class="">Verifies signature with <code>JWT_ACCESS_SECRET</code>.</li>
+<li class="">Fetches user from DB, checks <code>isActive</code>, and attaches user to <code>req.user</code>.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-active-hardening--codeqlmitigated-patterns">5. Active Hardening &amp; CodeQL‑Mitigated Patterns<a href="#5-active-hardening--codeqlmitigated-patterns" class="hash-link" aria-label="Direct link to 5. Active Hardening &amp; CodeQL‑Mitigated Patterns" title="Direct link to 5. Active Hardening &amp; CodeQL‑Mitigated Patterns" translate="no">​</a></h2>
+<p>The following have been implemented and verified by CodeQL:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>CWE</th><th>Threat</th><th>Mitigation</th><th>Source File</th></tr></thead><tbody><tr><td>CWE-117</td><td>Log injection (<code>\r\n</code> in logs)</td><td><code>safeLog()</code> strips control characters before Winston.</td><td><code>sanitizer.ts</code> (used in <code>product.service.ts</code>, <code>cart.service.ts</code>, etc.)</td></tr><tr><td>CWE-400</td><td>Memory exhaustion (pagination)</td><td>Hard cap on <code>limit</code> (e.g., <code>max(50)</code> for products, <code>max(100)</code> for search).</td><td><code>product.public.dto.ts</code>, <code>search.dto.ts</code></td></tr><tr><td>CWE-770</td><td>No rate limiting</td><td>Distributed limiters with Redis.</td><td><code>rate-limit.middleware.ts</code></td></tr><tr><td>CWE-943</td><td>NoSQL operator injection</td><td><code>Sanitizer.sanitize()</code> + explicit <code>$eq</code> wrappers.</td><td><code>validate.middleware.ts</code>, <code>sanitizer.ts</code></td></tr><tr><td>CWE-1321</td><td>Prototype pollution</td><td>Stripping of <code>__proto__</code>, <code>constructor</code>, <code>prototype</code> keys.</td><td><code>sanitizer.ts</code></td></tr><tr><td>CWE-807</td><td>Authentication bypass</td><td>Use of signed cookies (<code>req.signedCookies</code>) for JWT.</td><td><code>auth.middleware.ts</code></td></tr><tr><td>CWE-250</td><td>Uncontrolled data used in path traversal</td><td>Not applicable (no file system operations).</td><td>–</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-security-summary-table">6. Security Summary Table<a href="#6-security-summary-table" class="hash-link" aria-label="Direct link to 6. Security Summary Table" title="Direct link to 6. Security Summary Table" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Layer</th><th>Defences</th></tr></thead><tbody><tr><td>HTTP</td><td>Helmet, CORS (explicit origins), TLS 1.3 (enforced by reverse proxy)</td></tr><tr><td>Transport</td><td>Rate limiting (Redis), payload truncation (10 KB)</td></tr><tr><td>Validation</td><td>Zod schemas, <code>Sanitizer.sanitize()</code>, <code>express-mongo-sanitize</code></td></tr><tr><td>Session</td><td>Stateless JWTs, HttpOnly refresh cookies, Redis blacklist</td></tr><tr><td>Cryptography</td><td>bcrypt (passwords), HMAC‑SHA256 (webhooks), <code>crypto.randomInt</code> (OTPs)</td></tr><tr><td>Error handling</td><td><code>AppError</code> with <code>isOperational</code> flag, no stack traces in production</td></tr><tr><td>Logging</td><td>Winston with daily rotation, PII‑free HTTP logging (Morgan)</td></tr><tr><td>Audit</td><td>CodeQL SAST, Dependabot (weekly), branch protection</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-related-files">7. Related Files<a href="#7-related-files" class="hash-link" aria-label="Direct link to 7. Related Files" title="Direct link to 7. Related Files" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>File</th><th>Purpose</th></tr></thead><tbody><tr><td><code>src/shared/middlewares/rate-limit.middleware.ts</code></td><td>Distributed rate limiters</td></tr><tr><td><code>src/shared/middlewares/validate.middleware.ts</code></td><td>Zod validation + sanitisation</td></tr><tr><td><code>src/shared/utils/sanitizer.ts</code></td><td>NoSQL injection &amp; prototype pollution cleaner</td></tr><tr><td><code>src/shared/middlewares/auth.middleware.ts</code></td><td>JWT verification (<code>protect</code>)</td></tr><tr><td><code>src/shared/middlewares/error.middleware.ts</code></td><td>Global error handler</td></tr><tr><td><code>src/shared/utils/app-error.ts</code></td><td>Custom error class with <code>isOperational</code></td></tr><tr><td><code>src/config/cloudinary.ts</code></td><td>Secure image uploads (MIME filter, WebP)</td></tr><tr><td><code>src/shared/middlewares/upload.middleware.ts</code></td><td>File size limits, MIME validation</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next Steps<a href="#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps" translate="no">​</a></h2>
+<ul>
+<li class="">Read <a class="" href="/docs-reshma/docs/architecture/middleware-and-validation">Middleware &amp; Validation</a> for the complete request pipeline.</li>
+<li class="">Understand <a class="" href="/docs-reshma/docs/architecture/auth-architecture">Authentication Architecture</a> for two‑token session details.</li>
+<li class="">Review <a class="" href="/docs-reshma/docs/architecture/background-jobs-and-cron">Background Jobs &amp; Cron</a> for <code>safeLog()</code> usage in workers.</li>
+</ul>
+<hr>
+<p><em>The Reshma-Core Team</em></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/Afzal14786/docs-reshma/edit/main/docs/architecture/security-hardening.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs-reshma/docs/architecture/product-catalog"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">product-catalog</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs-reshma/docs/architecture/middleware-and-validation"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">middleware-and-validation</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-core-security-philosophy" class="table-of-contents__link toc-highlight">1. Core Security Philosophy</a></li><li><a href="#2-layer-1-http--transport-defences" class="table-of-contents__link toc-highlight">2. Layer 1: HTTP &amp; Transport Defences</a><ul><li><a href="#helmetjs-header-protection" class="table-of-contents__link toc-highlight">Helmet.js (Header Protection)</a></li><li><a href="#distributed-rate-limiting-rate-limitmiddlewarets" class="table-of-contents__link toc-highlight">Distributed Rate Limiting (<code>rate-limit.middleware.ts</code>)</a></li></ul></li><li><a href="#3-layer-2-payload--injection-protection" class="table-of-contents__link toc-highlight">3. Layer 2: Payload &amp; Injection Protection</a><ul><li><a href="#ram-exhaustion-prevention-oom" class="table-of-contents__link toc-highlight">RAM Exhaustion Prevention (OOM)</a></li><li><a href="#rawbody-interceptor-hmac-integrity" class="table-of-contents__link toc-highlight">Raw‑Body Interceptor (HMAC Integrity)</a></li><li><a href="#nosql-injection--prototype-pollution-defence" class="table-of-contents__link toc-highlight">NoSQL Injection &amp; Prototype Pollution Defence</a></li><li><a href="#zod-validation-firewall" class="table-of-contents__link toc-highlight">Zod Validation Firewall</a></li></ul></li><li><a href="#4-layer-3-identity--session-security" class="table-of-contents__link toc-highlight">4. Layer 3: Identity &amp; Session Security</a><ul><li><a href="#xss--csrf-immunity" class="table-of-contents__link toc-highlight">XSS &amp; CSRF Immunity</a></li><li><a href="#token-hijack-mitigation-redis-blacklist" class="table-of-contents__link toc-highlight">Token Hijack Mitigation (Redis Blacklist)</a></li><li><a href="#authentication-middleware-protect" class="table-of-contents__link toc-highlight">Authentication Middleware (<code>protect</code>)</a></li></ul></li><li><a href="#5-active-hardening--codeqlmitigated-patterns" class="table-of-contents__link toc-highlight">5. Active Hardening &amp; CodeQL‑Mitigated Patterns</a></li><li><a href="#6-security-summary-table" class="table-of-contents__link toc-highlight">6. Security Summary Table</a></li><li><a href="#7-related-files" class="table-of-contents__link toc-highlight">7. Related Files</a></li><li><a href="#next-steps" class="table-of-contents__link toc-highlight">Next Steps</a></li></ul></div></div></div></div></main></div></div></div><footer class="boutique-footer"><div class="footer-container"><div class="footer-col brand-col"><h3 class="footer-brand-name">Reshma Bangles</h3><p class="footer-description">Premium backend architecture and e-commerce platform API. Designed for elegance and seamless scaling.</p><div class="social-icons"><a href="https://www.instagram.com/reshmabangles" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/reshmabangles" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://www.youtube.com/reshmabangles" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div><div class="footer-col links-col"><h4 class="footer-heading">Company</h4><ul class="footer-links"><li><a href="/reshma-docs/docs/deployment/production-checklist">Support &amp; Deployments</a></li><li><a href="/reshma-docs/docs/legal/privacy-policy">Privacy Policy</a></li><li><a href="/reshma-docs/docs/legal/terms">Terms of Service</a></li><li><a href="/reshma-docs/docs/legal/license">System License</a></li></ul></div><div class="footer-col dev-col"><h4 class="footer-heading">Engineering</h4><div class="dev-info"><span class="dev-name">Md Afzal Ansari</span><span class="dev-title">Lead Developer</span></div><div class="dev-icons"><a href="https://github.com/Afzal14786" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/0x4f5a4c/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="https://leetcode.com/0x4f5a4c" target="_blank" rel="noopener noreferrer" aria-label="LeetCode"><i class="fas fa-code"></i></a><a href="https://iamafzal-dev.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Portfolio"><i class="fas fa-briefcase"></i></a><a href="mailto:mdafzal14777@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="footer-bottom"><p class="copyright-text">© <!-- -->2026<!-- --> Reshma Bangles &amp; Boutique. All rights reserved.</p></div></footer></div>
+</body>
+</html>

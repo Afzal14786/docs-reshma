@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-modules/notification-module" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">notification-module | Reshma‑Core Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://afzal14786.github.io/docs-reshma/img/app-logo.png"><meta data-rh="true" name="twitter:image" content="https://afzal14786.github.io/docs-reshma/img/app-logo.png"><meta data-rh="true" property="og:url" content="https://afzal14786.github.io/docs-reshma/docs/modules/notification-module"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="notification-module | Reshma‑Core Documentation"><meta data-rh="true" name="description" content="# Notification &amp; Queue Engine"><meta data-rh="true" property="og:description" content="# Notification &amp; Queue Engine"><link data-rh="true" rel="icon" href="/docs-reshma/img/app-logo.png"><link data-rh="true" rel="canonical" href="https://afzal14786.github.io/docs-reshma/docs/modules/notification-module"><link data-rh="true" rel="alternate" href="https://afzal14786.github.io/docs-reshma/docs/modules/notification-module" hreflang="en"><link data-rh="true" rel="alternate" href="https://afzal14786.github.io/docs-reshma/docs/modules/notification-module" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"notification-module","item":"https://afzal14786.github.io/docs-reshma/docs/modules/notification-module"}]}</script><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Lato:wght@300;400;700&amp;display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="/docs-reshma/assets/css/styles.3818e395.css">
+<script src="/docs-reshma/assets/js/runtime~main.fab89455.js" defer="defer"></script>
+<script src="/docs-reshma/assets/js/main.dccac395.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/docs-reshma/img/app-logo.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/docs-reshma/"><div class="navbar__logo"><img src="/docs-reshma/img/app-logo.png" alt="Reshma Bangles Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/docs-reshma/img/app-logo.png" alt="Reshma Bangles Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Reshma‑Core</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs-reshma/docs/">Docs</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/Afzal14786" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs-reshma/docs/"><span title="🏠 Overview" class="linkLabel_WmDU">🏠 Overview</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs-reshma/docs/getting-started/local-development"><span title="🚀 Getting Started" class="categoryLinkLabel_W154">🚀 Getting Started</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/getting-started/local-development"><span title="local-development" class="linkLabel_WmDU">local-development</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/getting-started/docker-setup"><span title="docker-setup" class="linkLabel_WmDU">docker-setup</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/getting-started/environment-variables"><span title="Environment Variables Configuration Guide" class="linkLabel_WmDU">Environment Variables Configuration Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/getting-started/database-seeding"><span title="database-seeding" class="linkLabel_WmDU">database-seeding</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs-reshma/docs/api/authentication"><span title="📡 API Reference" class="categoryLinkLabel_W154">📡 API Reference</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/authentication"><span title="authentication" class="linkLabel_WmDU">authentication</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/rate-limiting"><span title="rate-limiting" class="linkLabel_WmDU">rate-limiting</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/error-codes"><span title="error-codes" class="linkLabel_WmDU">error-codes</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs-reshma/docs/api/modules/auth"><span title="📦 Modules" class="categoryLinkLabel_W154">📦 Modules</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs-reshma/docs/api/thunder-tests/auth-runbook"><span title="🧪 Testing (Runbooks)" class="categoryLinkLabel_W154">🧪 Testing (Runbooks)</span></a></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs-reshma/docs/architecture/system-overview"><span title="🏗️ Architecture" class="categoryLinkLabel_W154">🏗️ Architecture</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs-reshma/docs/deployment/production-checklist"><span title="☁️ Deployment" class="categoryLinkLabel_W154">☁️ Deployment</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs-reshma/docs/modules/auth-module"><span title="🧩 Module Deep Dives" class="categoryLinkLabel_W154">🧩 Module Deep Dives</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/modules/auth-module"><span title="auth-module" class="linkLabel_WmDU">auth-module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/modules/user-module"><span title="user-module" class="linkLabel_WmDU">user-module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/modules/product-module"><span title="product-module" class="linkLabel_WmDU">product-module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/modules/cart-module"><span title="cart-module" class="linkLabel_WmDU">cart-module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/modules/order-module"><span title="order-module" class="linkLabel_WmDU">order-module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/modules/return-module"><span title="return-module" class="linkLabel_WmDU">return-module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/modules/interaction-module"><span title="interaction-module" class="linkLabel_WmDU">interaction-module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/modules/coupon-module"><span title="coupon-module" class="linkLabel_WmDU">coupon-module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/modules/wishlist-module"><span title="wishlist-module" class="linkLabel_WmDU">wishlist-module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/modules/search-module"><span title="search-module" class="linkLabel_WmDU">search-module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/modules/dashboard-module"><span title="dashboard-module" class="linkLabel_WmDU">dashboard-module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/modules/support-module"><span title="support-module" class="linkLabel_WmDU">support-module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs-reshma/docs/modules/notification-module"><span title="notification-module" class="linkLabel_WmDU">notification-module</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/modules/health-module"><span title="health-module" class="linkLabel_WmDU">health-module</span></a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs-reshma/docs/glossary"><span title="📖 Glossary" class="linkLabel_WmDU">📖 Glossary</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/docs-reshma/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">🧩 Module Deep Dives</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">notification-module</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><div align="center">
+<header><h1>Notification &amp; Queue Engine</h1></header>
+<p><strong>The central nervous system of Reshma-Core. A hybrid Facade architecture managing persistent In-App alerts (MongoDB) and asynchronous transactional emails (BullMQ/Redis).</strong></p>
+<p><a href="https://bullmq.io/" target="_blank" rel="noopener noreferrer" class=""><img decoding="async" loading="lazy" src="https://img.shields.io/badge/BullMQ-Background_Workers-FF4081?style=flat" alt="BullMQ" class="img_ev3q"></a>
+<a href="https://redis.io/" target="_blank" rel="noopener noreferrer" class=""><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Redis-Message_Broker-DC382D?style=flat&amp;logo=redis&amp;logoColor=white" alt="Redis" class="img_ev3q"></a>
+<a href="https://nodemailer.com/" target="_blank" rel="noopener noreferrer" class=""><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Nodemailer-SMTP_Transport-14C3B8?style=flat" alt="Nodemailer" class="img_ev3q"></a>
+<a href="https://mjml.io/" target="_blank" rel="noopener noreferrer" class=""><img decoding="async" loading="lazy" src="https://img.shields.io/badge/MJML-Responsive_Templates-00B2A9?style=flat" alt="MJML" class="img_ev3q"></a></p>
+</div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<p>The Notification Module uses the <strong>Facade Design Pattern</strong> to decouple business logic from messaging infrastructure. It handles two streams:</p>
+<ol>
+<li class=""><strong>In-App Notifications</strong> – persistent alerts stored in MongoDB, displayed in the user’s dashboard (bell icon).</li>
+<li class=""><strong>Email Notifications</strong> – asynchronous background jobs (BullMQ/Redis) that compile HTML templates (MJML) and dispatch via SMTP.</li>
+</ol>
+<p>All email templates are strictly typed using <strong>TypeScript discriminated unions</strong>, ensuring compile‑time safety. In‑app notifications are written to MongoDB in a <strong>fire‑and‑forget</strong> manner to avoid blocking the HTTP response.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="architectural-flow--performance-optimization">Architectural Flow &amp; Performance Optimization<a href="#architectural-flow--performance-optimization" class="hash-link" aria-label="Direct link to Architectural Flow &amp; Performance Optimization" title="Direct link to Architectural Flow &amp; Performance Optimization" translate="no">​</a></h2>
+<!-- -->
+<p><strong>Performance note:</strong></p>
+<ul>
+<li class="">Pushing to Redis (BullMQ) is sub‑millisecond.</li>
+<li class="">Writing to MongoDB can cause latency spikes, so <code>Notification.create()</code> calls <strong>omit</strong> <code>await</code> and use <code>.catch()</code> for error logging. The HTTP response returns instantly.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="core-components">Core Components<a href="#core-components" class="hash-link" aria-label="Direct link to Core Components" title="Direct link to Core Components" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-the-facade-layer-notificationservicets">1. The Facade Layer (<code>notification.service.ts</code>)<a href="#1-the-facade-layer-notificationservicets" class="hash-link" aria-label="Direct link to 1-the-facade-layer-notificationservicets" title="Direct link to 1-the-facade-layer-notificationservicets" translate="no">​</a></h3>
+<p>Central entry point for the whole application. Provides specific trigger methods that abstract payload structures.</p>
+<p><strong>Key methods:</strong></p>
+<ul>
+<li class=""><code>sendOtpEmail()</code> – queues OTP email.</li>
+<li class=""><code>triggerWelcome()</code> – hybrid: BullMQ email + async in‑app notification.</li>
+<li class=""><code>sendPasswordUpdateConfirmation()</code> – security alert email + in‑app.</li>
+<li class=""><code>sendOrderConfirmationNotification()</code> – order confirmation email + in‑app.</li>
+<li class=""><code>sendOrderCancelledNotification()</code> – cancellation email with reason.</li>
+<li class=""><code>sendOrderShippedNotification()</code> – tracking email + in‑app.</li>
+<li class=""><code>sendOrderDeliveredNotification()</code> – delivery email + in‑app.</li>
+<li class=""><code>sendReturnRequested/Approved/Rejected/RefundedNotification()</code> – return lifecycle emails + in‑app.</li>
+<li class=""><code>sendTicketCreatedNotification()</code> / <code>sendTicketReplyNotification()</code> – support ticket emails + in‑app.</li>
+<li class=""><code>sendDataExportEmail()</code> – DPDP/GDPR data export (attached JSON file).</li>
+</ul>
+<p><strong>Fire‑and‑forget pattern for in‑app notifications:</strong></p>
+<div class="language-typescript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-typescript codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">Notification</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">create</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"> recipientId</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> type</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> title</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> message</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> link </span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">catch</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">err </span><span class="token operator" style="color:#393A34">=&gt;</span><span class="token plain"> logger</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">error</span><span class="token punctuation" style="color:#393A34">(</span><span class="token template-string template-punctuation string" style="color:#e3116c">`</span><span class="token template-string string" style="color:#e3116c">In-app notification failed: </span><span class="token template-string interpolation interpolation-punctuation punctuation" style="color:#393A34">${</span><span class="token template-string interpolation">err</span><span class="token template-string interpolation punctuation" style="color:#393A34">.</span><span class="token template-string interpolation">message</span><span class="token template-string interpolation interpolation-punctuation punctuation" style="color:#393A34">}</span><span class="token template-string template-punctuation string" style="color:#e3116c">`</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-the-presentation-layer-notificationcontrollerts">2. The Presentation Layer (<code>notification.controller.ts</code>)<a href="#2-the-presentation-layer-notificationcontrollerts" class="hash-link" aria-label="Direct link to 2-the-presentation-layer-notificationcontrollerts" title="Direct link to 2-the-presentation-layer-notificationcontrollerts" translate="no">​</a></h3>
+<p>Only handles <strong>in‑app notifications</strong> (bell icon). Never dispatches emails.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Endpoint</th><th>Method</th><th>Description</th></tr></thead><tbody><tr><td><code>/api/v1/notifications</code></td><td><code>GET</code></td><td>Paginated, unread notifications for the authenticated user.</td></tr><tr><td><code>/api/v1/notifications/:id/read</code></td><td><code>PATCH</code></td><td>Marks a notification as read (IDOR‑protected).</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-the-compiler--strict-payload-validation-compileemailtemplate">3. The Compiler &amp; Strict Payload Validation (<code>compileEmailTemplate</code>)<a href="#3-the-compiler--strict-payload-validation-compileemailtemplate" class="hash-link" aria-label="Direct link to 3-the-compiler--strict-payload-validation-compileemailtemplate" title="Direct link to 3-the-compiler--strict-payload-validation-compileemailtemplate" translate="no">​</a></h3>
+<ul>
+<li class="">Uses <strong>TypeScript discriminated unions</strong> (<code>EmailJobPayload</code>). Each job type has its own required data fields.</li>
+<li class="">The <code>switch</code> statement is <strong>exhaustive</strong>: if a new <code>EmailJobType</code> is added but not handled, the TypeScript compiler will error (using the <code>never</code> type).</li>
+<li class="">All templates are MJML‑based, compiled to HTML with dark mode support and responsive design.</li>
+</ul>
+<p><strong>Exhaustiveness example</strong></p>
+<div class="language-typescript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-typescript codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">switch</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">payload</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">type</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token keyword" style="color:#00009f">case</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;OTP_VERIFICATION&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">return</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"> subject</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> html</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">await</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">otpVerificationTemplate</span><span class="token punctuation" style="color:#393A34">(</span><span class="token operator" style="color:#393A34">...</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token comment" style="color:#999988;font-style:italic">// ... other cases</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token keyword" style="color:#00009f">default</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token keyword" style="color:#00009f">const</span><span class="token plain"> _exhaustiveCheck</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token builtin">never</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> payload</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token keyword" style="color:#00009f">throw</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">new</span><span class="token plain"> </span><span class="token class-name">Error</span><span class="token punctuation" style="color:#393A34">(</span><span class="token template-string template-punctuation string" style="color:#e3116c">`</span><span class="token template-string string" style="color:#e3116c">Unhandled email type: </span><span class="token template-string interpolation interpolation-punctuation punctuation" style="color:#393A34">${</span><span class="token template-string interpolation">payload</span><span class="token template-string interpolation punctuation" style="color:#393A34">.</span><span class="token template-string interpolation keyword" style="color:#00009f">type</span><span class="token template-string interpolation interpolation-punctuation punctuation" style="color:#393A34">}</span><span class="token template-string template-punctuation string" style="color:#e3116c">`</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><br></div></code></pre></div></div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="background-queue-architecture-bullmq">Background Queue Architecture (BullMQ)<a href="#background-queue-architecture-bullmq" class="hash-link" aria-label="Direct link to Background Queue Architecture (BullMQ)" title="Direct link to Background Queue Architecture (BullMQ)" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="producers">Producers<a href="#producers" class="hash-link" aria-label="Direct link to Producers" title="Direct link to Producers" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Queue</th><th>Purpose</th><th>File</th></tr></thead><tbody><tr><td>Email Queue</td><td>All transactional emails</td><td><code>email.queue.ts</code></td></tr><tr><td>Data Export Queue</td><td>DPDP/GDPR takeout</td><td><code>export.queue.ts</code></td></tr><tr><td>Invoice Queue</td><td>PDF generation</td><td><code>invoice.queue.ts</code></td></tr><tr><td>Search Sync Queue</td><td>Typesense eventual consistency</td><td><code>product.service.ts</code></td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="consumers-workers">Consumers (Workers)<a href="#consumers-workers" class="hash-link" aria-label="Direct link to Consumers (Workers)" title="Direct link to Consumers (Workers)" translate="no">​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Worker</th><th>Purpose</th><th>Concurrency</th><th>Retry</th></tr></thead><tbody><tr><td><code>email.worker.ts</code></td><td>Compiles MJML, sends via Nodemailer</td><td>N/A (BullMQ default)</td><td>3 attempts, exponential backoff</td></tr><tr><td><code>export.worker.ts</code></td><td>Fetches user data, creates JSON, emails</td><td>5</td><td>3 attempts</td></tr><tr><td><code>invoice.worker.ts</code></td><td>Generates PDF, uploads to Cloudinary</td><td>5</td><td>3 attempts (exponential)</td></tr><tr><td>Search sync (DLQ)</td><td>Retries failed Typesense ops</td><td>N/A</td><td>10 attempts, exponential backoff</td></tr></tbody></table>
+<p><strong>Security:</strong> All workers use <code>safeLog()</code> to strip <code>\r\n</code> from logs (CWE‑117 mitigation).</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="security--compliance">Security &amp; Compliance<a href="#security--compliance" class="hash-link" aria-label="Direct link to Security &amp; Compliance" title="Direct link to Security &amp; Compliance" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Concern</th><th>Mitigation</th></tr></thead><tbody><tr><td>IDOR (Insecure Direct Object Reference)</td><td><code>Notification.findOneAndUpdate({ _id, recipientId: userId })</code> ensures ownership.</td></tr><tr><td>Log injection (CWE‑117)</td><td><code>safeLog()</code> strips control characters before Winston logging.</td></tr><tr><td>DPDP/GDPR Right to Access</td><td>Asynchronous data export (<code>export.worker.ts</code>) – email with JSON attachment.</td></tr><tr><td>DPDP/GDPR Right to be Forgotten</td><td>Account deletion triggers <code>deleteUserCart</code>, <code>deleteUserWishlist</code> and anonymises orders.</td></tr><tr><td>Rate limiting</td><td><code>standardLimiter</code> applied before authentication on <code>/notifications</code> routes.</td></tr><tr><td>Template integrity</td><td>MJML compilation errors are caught; fallback plain HTML prevents outage.</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="rest-api-specifications-in-app-alerts">REST API Specifications (In-App Alerts)<a href="#rest-api-specifications-in-app-alerts" class="hash-link" aria-label="Direct link to REST API Specifications (In-App Alerts)" title="Direct link to REST API Specifications (In-App Alerts)" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Method</th><th>Endpoint</th><th>Access</th><th>Description</th></tr></thead><tbody><tr><td><code>GET</code></td><td><code>/api/v1/notifications</code></td><td>Protected</td><td>Paginated, unread notifications (newest first). Supports <code>?page=1&amp;limit=10</code>.</td></tr><tr><td><code>PATCH</code></td><td><code>/api/v1/notifications/:notificationId/read</code></td><td>Protected</td><td>Marks a single notification as read. Verifies <code>recipientId</code> matches <code>req.user._id</code>.</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-files">Related Files<a href="#related-files" class="hash-link" aria-label="Direct link to Related Files" title="Direct link to Related Files" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>File</th><th>Purpose</th></tr></thead><tbody><tr><td><code>src/modules/notifications/notification.controller.ts</code></td><td>HTTP layer (in‑app only).</td></tr><tr><td><code>src/modules/notifications/notification.service.ts</code></td><td>Facade – dispatches emails and in‑app alerts.</td></tr><tr><td><code>src/modules/notifications/notification.model.ts</code></td><td>Mongoose schema for in‑app notifications.</td></tr><tr><td><code>src/modules/notifications/interface/email.interface.ts</code></td><td>Discriminated union types for email jobs.</td></tr><tr><td><code>src/shared/queues/email.queue.ts</code></td><td>BullMQ producer.</td></tr><tr><td><code>src/shared/queues/email.worker.ts</code></td><td>BullMQ consumer – compiles HTML, sends SMTP.</td></tr><tr><td><code>src/shared/queues/export.queue.ts</code> &amp; <code>export.worker.ts</code></td><td>Data portability.</td></tr><tr><td><code>src/modules/notifications/templates/*.ts</code></td><td>MJML email templates (welcome, OTP, order, return, support, etc.).</td></tr><tr><td><code>src/modules/notifications/templates/layout.ts</code></td><td>Base MJML layout with dark mode, social links, footer.</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="see-also">See Also<a href="#see-also" class="hash-link" aria-label="Direct link to See Also" title="Direct link to See Also" translate="no">​</a></h2>
+<ul>
+<li class=""><a class="" href="/docs-reshma/docs/architecture/background-jobs-and-cron">Background Jobs &amp; Cron</a> – detailed queue and worker architecture.</li>
+<li class=""><a class="" href="/docs-reshma/docs/modules/order-module">Order Module</a> – triggers order‑related notifications.</li>
+<li class=""><a class="" href="/docs-reshma/docs/modules/user-module">User Module</a> – triggers security alerts and data export.</li>
+<li class=""><a class="" href="/docs-reshma/docs/modules/return-module">Return Module</a> – triggers return lifecycle emails.</li>
+<li class=""><a class="" href="/docs-reshma/docs/modules/support-module">Support Module</a> – triggers ticket‑related alerts.</li>
+<li class=""><a class="" href="/docs-reshma/docs/architecture/security-hardening">Security Hardening</a> – CWE‑117 and IDOR mitigations.</li>
+</ul>
+<hr>
+<p><em>The Reshma-Core Team</em></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/Afzal14786/docs-reshma/edit/main/docs/modules/notification-module.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs-reshma/docs/modules/support-module"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">support-module</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs-reshma/docs/modules/health-module"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">health-module</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#architectural-flow--performance-optimization" class="table-of-contents__link toc-highlight">Architectural Flow &amp; Performance Optimization</a></li><li><a href="#core-components" class="table-of-contents__link toc-highlight">Core Components</a><ul><li><a href="#1-the-facade-layer-notificationservicets" class="table-of-contents__link toc-highlight">1. The Facade Layer (<code>notification.service.ts</code>)</a></li><li><a href="#2-the-presentation-layer-notificationcontrollerts" class="table-of-contents__link toc-highlight">2. The Presentation Layer (<code>notification.controller.ts</code>)</a></li><li><a href="#3-the-compiler--strict-payload-validation-compileemailtemplate" class="table-of-contents__link toc-highlight">3. The Compiler &amp; Strict Payload Validation (<code>compileEmailTemplate</code>)</a></li></ul></li><li><a href="#background-queue-architecture-bullmq" class="table-of-contents__link toc-highlight">Background Queue Architecture (BullMQ)</a><ul><li><a href="#producers" class="table-of-contents__link toc-highlight">Producers</a></li><li><a href="#consumers-workers" class="table-of-contents__link toc-highlight">Consumers (Workers)</a></li></ul></li><li><a href="#security--compliance" class="table-of-contents__link toc-highlight">Security &amp; Compliance</a></li><li><a href="#rest-api-specifications-in-app-alerts" class="table-of-contents__link toc-highlight">REST API Specifications (In-App Alerts)</a></li><li><a href="#related-files" class="table-of-contents__link toc-highlight">Related Files</a></li><li><a href="#see-also" class="table-of-contents__link toc-highlight">See Also</a></li></ul></div></div></div></div></main></div></div></div><footer class="boutique-footer"><div class="footer-container"><div class="footer-col brand-col"><h3 class="footer-brand-name">Reshma Bangles</h3><p class="footer-description">Premium backend architecture and e-commerce platform API. Designed for elegance and seamless scaling.</p><div class="social-icons"><a href="https://www.instagram.com/reshmabangles" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/reshmabangles" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://www.youtube.com/reshmabangles" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div><div class="footer-col links-col"><h4 class="footer-heading">Company</h4><ul class="footer-links"><li><a href="/reshma-docs/docs/deployment/production-checklist">Support &amp; Deployments</a></li><li><a href="/reshma-docs/docs/legal/privacy-policy">Privacy Policy</a></li><li><a href="/reshma-docs/docs/legal/terms">Terms of Service</a></li><li><a href="/reshma-docs/docs/legal/license">System License</a></li></ul></div><div class="footer-col dev-col"><h4 class="footer-heading">Engineering</h4><div class="dev-info"><span class="dev-name">Md Afzal Ansari</span><span class="dev-title">Lead Developer</span></div><div class="dev-icons"><a href="https://github.com/Afzal14786" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/0x4f5a4c/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="https://leetcode.com/0x4f5a4c" target="_blank" rel="noopener noreferrer" aria-label="LeetCode"><i class="fas fa-code"></i></a><a href="https://iamafzal-dev.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Portfolio"><i class="fas fa-briefcase"></i></a><a href="mailto:mdafzal14777@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="footer-bottom"><p class="copyright-text">© <!-- -->2026<!-- --> Reshma Bangles &amp; Boutique. All rights reserved.</p></div></footer></div>
+</body>
+</html>

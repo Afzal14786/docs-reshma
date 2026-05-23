@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-architecture/database-design" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">database-design | Reshma‑Core Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://afzal14786.github.io/docs-reshma/img/app-logo.png"><meta data-rh="true" name="twitter:image" content="https://afzal14786.github.io/docs-reshma/img/app-logo.png"><meta data-rh="true" property="og:url" content="https://afzal14786.github.io/docs-reshma/docs/architecture/database-design"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="database-design | Reshma‑Core Documentation"><meta data-rh="true" name="description" content="# Database Design &amp; Polymorphic Catalog"><meta data-rh="true" property="og:description" content="# Database Design &amp; Polymorphic Catalog"><link data-rh="true" rel="icon" href="/docs-reshma/img/app-logo.png"><link data-rh="true" rel="canonical" href="https://afzal14786.github.io/docs-reshma/docs/architecture/database-design"><link data-rh="true" rel="alternate" href="https://afzal14786.github.io/docs-reshma/docs/architecture/database-design" hreflang="en"><link data-rh="true" rel="alternate" href="https://afzal14786.github.io/docs-reshma/docs/architecture/database-design" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"database-design","item":"https://afzal14786.github.io/docs-reshma/docs/architecture/database-design"}]}</script><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Lato:wght@300;400;700&amp;display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="/docs-reshma/assets/css/styles.3818e395.css">
+<script src="/docs-reshma/assets/js/runtime~main.fab89455.js" defer="defer"></script>
+<script src="/docs-reshma/assets/js/main.dccac395.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/docs-reshma/img/app-logo.png"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/docs-reshma/"><div class="navbar__logo"><img src="/docs-reshma/img/app-logo.png" alt="Reshma Bangles Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/docs-reshma/img/app-logo.png" alt="Reshma Bangles Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Reshma‑Core</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs-reshma/docs/">Docs</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/Afzal14786" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs-reshma/docs/"><span title="🏠 Overview" class="linkLabel_WmDU">🏠 Overview</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs-reshma/docs/getting-started/local-development"><span title="🚀 Getting Started" class="categoryLinkLabel_W154">🚀 Getting Started</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/getting-started/local-development"><span title="local-development" class="linkLabel_WmDU">local-development</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/getting-started/docker-setup"><span title="docker-setup" class="linkLabel_WmDU">docker-setup</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/getting-started/environment-variables"><span title="Environment Variables Configuration Guide" class="linkLabel_WmDU">Environment Variables Configuration Guide</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/getting-started/database-seeding"><span title="database-seeding" class="linkLabel_WmDU">database-seeding</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="true" href="/docs-reshma/docs/api/authentication"><span title="📡 API Reference" class="categoryLinkLabel_W154">📡 API Reference</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/authentication"><span title="authentication" class="linkLabel_WmDU">authentication</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/rate-limiting"><span title="rate-limiting" class="linkLabel_WmDU">rate-limiting</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/api/error-codes"><span title="error-codes" class="linkLabel_WmDU">error-codes</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs-reshma/docs/api/modules/auth"><span title="📦 Modules" class="categoryLinkLabel_W154">📦 Modules</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs-reshma/docs/api/thunder-tests/auth-runbook"><span title="🧪 Testing (Runbooks)" class="categoryLinkLabel_W154">🧪 Testing (Runbooks)</span></a></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/docs-reshma/docs/architecture/system-overview"><span title="🏗️ Architecture" class="categoryLinkLabel_W154">🏗️ Architecture</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/system-overview"><span title="system-overview" class="linkLabel_WmDU">system-overview</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/auth-architecture"><span title="auth-architecture" class="linkLabel_WmDU">auth-architecture</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs-reshma/docs/architecture/database-design"><span title="database-design" class="linkLabel_WmDU">database-design</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/product-catalog"><span title="product-catalog" class="linkLabel_WmDU">product-catalog</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/security-hardening"><span title="security-hardening" class="linkLabel_WmDU">security-hardening</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/middleware-and-validation"><span title="middleware-and-validation" class="linkLabel_WmDU">middleware-and-validation</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/payment-integration"><span title="payment-integration" class="linkLabel_WmDU">payment-integration</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/legal-tax-compliance"><span title="legal-tax-compliance" class="linkLabel_WmDU">legal-tax-compliance</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/edge-cache"><span title="edge-cache" class="linkLabel_WmDU">edge-cache</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/background-jobs-and-cron"><span title="background-jobs-and-cron" class="linkLabel_WmDU">background-jobs-and-cron</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/logistics-and-shipping"><span title="logistics-and-shipping" class="linkLabel_WmDU">logistics-and-shipping</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/media-and-storage"><span title="media-and-storage" class="linkLabel_WmDU">media-and-storage</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs-reshma/docs/architecture/devops-and-infrastructure"><span title="devops-and-infrastructure" class="linkLabel_WmDU">devops-and-infrastructure</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs-reshma/docs/deployment/production-checklist"><span title="☁️ Deployment" class="categoryLinkLabel_W154">☁️ Deployment</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs-reshma/docs/modules/auth-module"><span title="🧩 Module Deep Dives" class="categoryLinkLabel_W154">🧩 Module Deep Dives</span></a></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs-reshma/docs/glossary"><span title="📖 Glossary" class="linkLabel_WmDU">📖 Glossary</span></a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/docs-reshma/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">🏗️ Architecture</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">database-design</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><div align="center">
+<header><h1>Database Design &amp; Polymorphic Catalog</h1></header>
+<p><strong>The scalable NoSQL data modeling strategy for the diverse Reshma-Core inventory.</strong></p>
+<p><a href="#" class=""><img decoding="async" loading="lazy" src="https://img.shields.io/badge/MongoDB-Atlas-47A248?style=flat&amp;logo=mongodb&amp;logoColor=white" alt="MongoDB" class="img_ev3q"></a>
+<a href="#" class=""><img decoding="async" loading="lazy" src="https://img.shields.io/badge/Mongoose-Discriminators-880000?style=flat&amp;logo=mongoose&amp;logoColor=white" alt="Mongoose" class="img_ev3q"></a></p>
+</div>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="1-the-polymorphic-strategy-single-collection">1. The Polymorphic Strategy (Single Collection)<a href="#1-the-polymorphic-strategy-single-collection" class="hash-link" aria-label="Direct link to 1. The Polymorphic Strategy (Single Collection)" title="Direct link to 1. The Polymorphic Strategy (Single Collection)" translate="no">​</a></h2>
+<p>In a traditional SQL database, handling completely different item types (like Glass Bangles versus Unstitched Fabrics) requires complex JOIN tables or the Entity-Attribute-Value pattern. Both approaches severely degrade read performance as the catalog grows.</p>
+<p>Reshma-Core utilizes <strong>Mongoose Discriminators</strong>, a polymorphic NoSQL pattern. All products, regardless of category, live inside one single <code>products</code> collection. This allows global text searches, universal pagination, and unified category filtering to operate in milliseconds.</p>
+<p>At the application layer, Mongoose enforces unique validation schemas based on the <code>itemType</code> discriminator key. The database will physically reject a query if an Apparel item attempts to save a Bangle‑specific property.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="11-architecture-decision-record-why-polymorphism">1.1 Architecture Decision Record: Why Polymorphism?<a href="#11-architecture-decision-record-why-polymorphism" class="hash-link" aria-label="Direct link to 1.1 Architecture Decision Record: Why Polymorphism?" title="Direct link to 1.1 Architecture Decision Record: Why Polymorphism?" translate="no">​</a></h2>
+<p>Before settling on Mongoose Discriminators, we evaluated two other common e‑commerce database patterns.</p>
+<p><strong>Rejected Alternative 1: Multiple Collections</strong></p>
+<ul>
+<li class=""><strong>Idea:</strong> Create a separate collection for each category (<code>Apparel</code>, <code>Bangles</code>, <code>Fabrics</code>).</li>
+<li class=""><strong>Why it fails:</strong> A customer search for the colour &quot;Red&quot; would require querying multiple collections, merging pagination in Node.js memory – slow and non‑scalable.</li>
+</ul>
+<p><strong>Rejected Alternative 2: The EAV Pattern (Entity‑Attribute‑Value)</strong></p>
+<ul>
+<li class=""><strong>Idea:</strong> Store custom fields in a generic array (<code>attributes: [{ key: &#x27;size&#x27;, value: &#x27;XL&#x27; }]</code>).</li>
+<li class=""><strong>Why it fails:</strong> No type safety; the database cannot prevent storing a bangle size on a saree. Indexing dynamic keys is inefficient.</li>
+</ul>
+<p><strong>The Winning Solution: Single Collection Polymorphism</strong></p>
+<ul>
+<li class=""><strong>How it works:</strong> All items live in one collection, discriminated by <code>itemType</code>. Mongoose applies the correct sub‑schema at the application layer.</li>
+<li class=""><strong>Benefits:</strong> Lightning‑fast global searches, strict per‑type validation, easy addition of new types without schema changes.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2-base-product-schema">2. Base Product Schema<a href="#2-base-product-schema" class="hash-link" aria-label="Direct link to 2. Base Product Schema" title="Direct link to 2. Base Product Schema" translate="no">​</a></h2>
+<p>Every product – regardless of type – includes these fields. They are defined in <code>base-product.model.ts</code> and <code>base-product.interface.ts</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th style="text-align:left">Field</th><th style="text-align:left">Type</th><th style="text-align:left">Rules</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left"><code>itemType</code></td><td style="text-align:left">String (enum)</td><td style="text-align:left">Required</td><td style="text-align:left">Discriminator key: <code>&quot;BANGLE&quot;</code>, <code>&quot;APPAREL&quot;</code>, <code>&quot;FABRIC&quot;</code>, <code>&quot;INNERWEAR&quot;</code>, <code>&quot;ACCESSORY&quot;</code></td></tr><tr><td style="text-align:left"><code>sku</code></td><td style="text-align:left">String</td><td style="text-align:left">Required, unique, uppercase, trimmed</td><td style="text-align:left">Stock Keeping Unit (warehouse barcode).</td></tr><tr><td style="text-align:left"><code>name</code></td><td style="text-align:left">String</td><td style="text-align:left">Required, trimmed</td><td style="text-align:left">Display title.</td></tr><tr><td style="text-align:left"><code>mainCategory</code></td><td style="text-align:left">String (enum)</td><td style="text-align:left">Required</td><td style="text-align:left">One of: <code>Sarees</code>, <code>Apparel</code>, <code>Accessories</code>, <code>Innerwear</code>, <code>Bangles</code></td></tr><tr><td style="text-align:left"><code>subCategory</code></td><td style="text-align:left">String</td><td style="text-align:left">Required, trimmed</td><td style="text-align:left">e.g., “Handloom”, “Kurti”, “Glass Bangles”</td></tr><tr><td style="text-align:left"><code>material</code></td><td style="text-align:left">String</td><td style="text-align:left">Required, trimmed</td><td style="text-align:left">Material composition.</td></tr><tr><td style="text-align:left"><code>sellingUnit</code></td><td style="text-align:left">String (enum)</td><td style="text-align:left">Required</td><td style="text-align:left"><code>Single Piece</code>, <code>Meter</code>, <code>Set</code>, <code>Pair</code>, <code>Dozen</code>, <code>Pack</code></td></tr><tr><td style="text-align:left"><code>colors</code></td><td style="text-align:left">String[]</td><td style="text-align:left">Optional, default <code>[]</code></td><td style="text-align:left">Array of colour names.</td></tr><tr><td style="text-align:left"><code>basePrice</code></td><td style="text-align:left">Number</td><td style="text-align:left">Required, min 0</td><td style="text-align:left">Raw price before discount and taxes.</td></tr><tr><td style="text-align:left"><code>discount</code></td><td style="text-align:left">Number</td><td style="text-align:left">Default 0, min 0, max 100</td><td style="text-align:left">Percentage discount.</td></tr><tr><td style="text-align:left"><code>currentStock</code></td><td style="text-align:left">Number</td><td style="text-align:left">Required, min 0</td><td style="text-align:left">Current inventory level.</td></tr><tr><td style="text-align:left"><code>weightGrams</code></td><td style="text-align:left">Number</td><td style="text-align:left">Required, min 0</td><td style="text-align:left">Physical weight – used for shipping calculations.</td></tr><tr><td style="text-align:left"><code>isFragile</code></td><td style="text-align:left">Boolean</td><td style="text-align:left">Required</td><td style="text-align:left">If <code>true</code>, returns require photographic evidence.</td></tr><tr><td style="text-align:left"><code>images</code></td><td style="text-align:left">String[]</td><td style="text-align:left">Required, min 1</td><td style="text-align:left">Cloudinary URLs (auto‑cleaned on delete).</td></tr><tr><td style="text-align:left"><code>hsnCode</code></td><td style="text-align:left">String</td><td style="text-align:left">Required, 4‑8 digits</td><td style="text-align:left">HSN code for Indian GST.</td></tr><tr><td style="text-align:left"><code>taxProfile</code></td><td style="text-align:left">String (enum)</td><td style="text-align:left">Required</td><td style="text-align:left">One of the <code>TaxProfile</code> values (e.g., <code>IMITATION_JEWELLERY</code>, <code>STITCHED_APPAREL</code>).</td></tr><tr><td style="text-align:left"><code>ratingsMetadata</code></td><td style="text-align:left">Object</td><td style="text-align:left">Auto‑managed</td><td style="text-align:left">Aggregated reviews: <code>averageRating</code>, <code>totalReviews</code>, <code>ratingDistribution</code> (1‑5 stars).</td></tr><tr><td style="text-align:left"><code>tags</code></td><td style="text-align:left">String[]</td><td style="text-align:left">Optional, default <code>[]</code></td><td style="text-align:left">Search keywords.</td></tr><tr><td style="text-align:left"><code>isActive</code></td><td style="text-align:left">Boolean</td><td style="text-align:left">Default <code>true</code></td><td style="text-align:left">Soft‑delete flag – never hard‑delete products to preserve historical orders.</td></tr><tr><td style="text-align:left"><code>createdAt</code> / <code>updatedAt</code></td><td style="text-align:left">Date</td><td style="text-align:left">Auto</td><td style="text-align:left">Timestamps.</td></tr></tbody></table>
+<blockquote>
+<p><strong>Note:</strong> The <code>description</code> field is <strong>not</strong> part of the base interface (it is present in the seeding script but not enforced in the model). Product descriptions are handled via a separate <code>details</code> field or not stored in the database.</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-discriminator-subschemas">3. Discriminator Sub‑Schemas<a href="#3-discriminator-subschemas" class="hash-link" aria-label="Direct link to 3. Discriminator Sub‑Schemas" title="Direct link to 3. Discriminator Sub‑Schemas" translate="no">​</a></h2>
+<p>Each product type adds its own fields. These are defined in separate model files (e.g., <code>bangle.model.ts</code>, <code>apparel.model.ts</code>) and inherit the base schema.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="31-bangle-schema-itemtype-bangle">3.1 Bangle Schema (<code>itemType: &quot;BANGLE&quot;</code>)<a href="#31-bangle-schema-itemtype-bangle" class="hash-link" aria-label="Direct link to 31-bangle-schema-itemtype-bangle" title="Direct link to 31-bangle-schema-itemtype-bangle" translate="no">​</a></h3>
+<p><strong>Used for:</strong> Glass, metal, lac bangles.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Field</th><th>Type</th><th>Rules</th><th>Notes</th></tr></thead><tbody><tr><td><code>bangleSizes</code></td><td>String[]</td><td>Required, at least one, enum: <code>&quot;2.2&quot;</code>, <code>&quot;2.4&quot;</code>, <code>&quot;2.6&quot;</code>, <code>&quot;2.8&quot;</code></td><td>Traditional Indian bangle diameters.</td></tr><tr><td><code>packSize</code></td><td>Number</td><td>Default 12, min 1</td><td>Often sold by the dozen.</td></tr></tbody></table>
+<p><strong>Example (from <code>bangle.model.ts</code>):</strong></p>
+<div class="language-typescript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-typescript codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token plain">bangleSizes</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"> type</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token plain">String</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> required</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">true</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">enum</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token string" style="color:#e3116c">&quot;2.2&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token string" style="color:#e3116c">&quot;2.4&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token string" style="color:#e3116c">&quot;2.6&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token string" style="color:#e3116c">&quot;2.8&quot;</span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">packSize</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"> type</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> Number</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">default</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">12</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> min</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">1</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">}</span><br></div></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="32-apparel-schema-itemtype-apparel">3.2 Apparel Schema (<code>itemType: &quot;APPAREL&quot;</code>)<a href="#32-apparel-schema-itemtype-apparel" class="hash-link" aria-label="Direct link to 32-apparel-schema-itemtype-apparel" title="Direct link to 32-apparel-schema-itemtype-apparel" translate="no">​</a></h3>
+<p><strong>Used for:</strong> Sarees, kurtis, suits, lehengas, readymade garments.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Field</th><th>Type</th><th>Rules</th><th>Notes</th></tr></thead><tbody><tr><td><code>sizes</code></td><td><code>String[]</code></td><td>Required, at least one, enum: <code>&quot;XS&quot;</code>, <code>&quot;S&quot;</code>, <code>&quot;M&quot;</code>, <code>&quot;L&quot;</code>, <code>&quot;XL&quot;</code>, <code>&quot;XXL&quot;</code>, <code>&quot;Free Size&quot;</code>, <code>&quot;34&quot;</code>, <code>&quot;36&quot;</code>, <code>&quot;38&quot;</code>, <code>&quot;40&quot;</code></td><td>Supports both letter and numeric sizes.</td></tr><tr><td><code>customTailoring</code></td><td><code>Boolean</code></td><td>Default <code>false</code></td><td>If true, checkout collects custom measurements.</td></tr><tr><td><code>careInstructions</code></td><td><code>String</code></td><td>Optional, trimmed</td><td>Wash care details.</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="33-fabric-schema-itemtype-fabric">3.3 Fabric Schema (<code>itemType: &quot;FABRIC&quot;</code>)<a href="#33-fabric-schema-itemtype-fabric" class="hash-link" aria-label="Direct link to 33-fabric-schema-itemtype-fabric" title="Direct link to 33-fabric-schema-itemtype-fabric" translate="no">​</a></h3>
+<p><strong>Used for:</strong> Unstitched fabric sold by length.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Field</th><th>Type</th><th>Rules</th><th>Notes</th></tr></thead><tbody><tr><td><code>lengthMeters</code></td><td><code>Number</code></td><td>Required, min 0.1</td><td>Length in metres.</td></tr><tr><td><code>customTailoring</code></td><td><code>Boolean</code></td><td>Default <code>true</code></td><td>Unstitched fabric usually requires tailoring.</td></tr></tbody></table>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="34-innerwear-schema-itemtype-innerwear">3.4 Innerwear Schema (<code>itemType: &quot;INNERWEAR&quot;</code>)<a href="#34-innerwear-schema-itemtype-innerwear" class="hash-link" aria-label="Direct link to 34-innerwear-schema-itemtype-innerwear" title="Direct link to 34-innerwear-schema-itemtype-innerwear" translate="no">​</a></h3>
+<p><strong>Used for:</strong> Bras, panties, shapewear.<br>
+<strong>Hygiene policy:</strong> Non‑returnable – enforced at schema level.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Field</th><th>Type</th><th>Rules</th><th>Notes</th></tr></thead><tbody><tr><td><code>cupSizes</code></td><td><code>String[]</code></td><td>Required, at least one, enum: <code>&quot;32B&quot;</code>, <code>&quot;34B&quot;</code>, <code>&quot;36C&quot;</code>, <code>&quot;34C&quot;</code>, <code>&quot;36D&quot;</code></td><td>Common Indian bra sizes.</td></tr><tr><td><code>isReturnable</code></td><td><code>Boolean</code></td><td>Forced <code>false</code> (<code>set: () =&gt; false</code>)</td><td>Cannot be overridden.</td></tr></tbody></table>
+<hr>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="35-accessory-schema-itemtype-accessory">3.5 Accessory Schema (<code>itemType: &quot;ACCESSORY&quot;</code>)<a href="#35-accessory-schema-itemtype-accessory" class="hash-link" aria-label="Direct link to 35-accessory-schema-itemtype-accessory" title="Direct link to 35-accessory-schema-itemtype-accessory" translate="no">​</a></h3>
+<p><strong>Used for:</strong> Jewellery, bags, bindis, hair accessories.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Field</th><th>Type</th><th>Rules</th><th>Notes</th></tr></thead><tbody><tr><td><code>sizeDetails</code></td><td><code>String</code></td><td>Required, trimmed</td><td>Free‑text size description (e.g., “Adjustable”, “One Size”).</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="4-indexing--performance-strategy">4. Indexing &amp; Performance Strategy<a href="#4-indexing--performance-strategy" class="hash-link" aria-label="Direct link to 4. Indexing &amp; Performance Strategy" title="Direct link to 4. Indexing &amp; Performance Strategy" translate="no">​</a></h2>
+<p>To ensure the catalog scales to tens of thousands of items, the following indexes are created at the MongoDB layer (see <code>base-product.model.ts</code>):</p>
+<div class="language-javascript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-javascript codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">// Text search index – global search bar (name, tags, subCategory)</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token maybe-class-name">BaseProductSchema</span><span class="token punctuation" style="color:#393A34">.</span><span class="token method function property-access" style="color:#d73a49">index</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"> </span><span class="token literal-property property" style="color:#36acaa">name</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;text&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token literal-property property" style="color:#36acaa">tags</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;text&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token literal-property property" style="color:#36acaa">subCategory</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;text&quot;</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">// Compound index for filtered listing – active → type → category → newest</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token maybe-class-name">BaseProductSchema</span><span class="token punctuation" style="color:#393A34">.</span><span class="token method function property-access" style="color:#d73a49">index</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token literal-property property" style="color:#36acaa">isActive</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">1</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token literal-property property" style="color:#36acaa">itemType</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">1</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token literal-property property" style="color:#36acaa">mainCategory</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">1</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token literal-property property" style="color:#36acaa">createdAt</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">-</span><span class="token number" style="color:#36acaa">1</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">// Unique index on SKU – prevents duplicate warehouse identifiers</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token maybe-class-name">BaseProductSchema</span><span class="token punctuation" style="color:#393A34">.</span><span class="token method function property-access" style="color:#d73a49">index</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"> </span><span class="token literal-property property" style="color:#36acaa">sku</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">1</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"> </span><span class="token literal-property property" style="color:#36acaa">unique</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">true</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<ul>
+<li class="">The <strong>text index</strong> enables fast keyword searches without an external search engine (though Typesense is also used for typo‑tolerant search).</li>
+<li class="">The <strong>compound index</strong> covers common queries like “show all active bangles, newest first” and prevents full collection scans.</li>
+<li class="">The <strong>unique index on SKU</strong> acts as a database‑level firewall.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="5-automatic-cloudinary-cleanup">5. Automatic Cloudinary Cleanup<a href="#5-automatic-cloudinary-cleanup" class="hash-link" aria-label="Direct link to 5. Automatic Cloudinary Cleanup" title="Direct link to 5. Automatic Cloudinary Cleanup" translate="no">​</a></h2>
+<p>When a product is <strong>hard‑deleted</strong> (using <code>findOneAndDelete</code>), a Mongoose <code>pre(&#x27;findOneAndDelete&#x27;)</code> hook runs. It retrieves the document, extracts the <code>images</code> array, and calls <code>deleteFromCloudinary()</code> for each URL. This prevents orphaned images from incurring costs.</p>
+<blockquote>
+<p><strong>Soft deletion</strong> (<code>isActive = false</code>) does <strong>not</strong> delete images – the product remains in the database for historical order integrity.</p>
+</blockquote>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-zod-validation-admin-dto">6. Zod Validation (Admin DTO)<a href="#6-zod-validation-admin-dto" class="hash-link" aria-label="Direct link to 6. Zod Validation (Admin DTO)" title="Direct link to 6. Zod Validation (Admin DTO)" translate="no">​</a></h2>
+<p>The <code>CreateProductSchema</code> in <code>product.admin.dto.ts</code> uses a <strong>Zod discriminated union</strong> to enforce the correct fields based on <code>itemType</code>. For example:</p>
+<div class="language-typescript codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-typescript codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">const</span><span class="token plain"> BangleSchema </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> BaseProductSchema</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">extend</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  itemType</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> z</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">literal</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;BANGLE&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  bangleSizes</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> z</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">array</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">z</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">enum</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">[</span><span class="token string" style="color:#e3116c">&quot;2.2&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token string" style="color:#e3116c">&quot;2.4&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token string" style="color:#e3116c">&quot;2.6&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token string" style="color:#e3116c">&quot;2.8&quot;</span><span class="token punctuation" style="color:#393A34">]</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">min</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">1</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain">  packSize</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> z</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">number</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">int</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">min</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">1</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">default</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">12</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><br></div></code></pre></div></div>
+<p>If an admin tries to create a bangle with <code>cupSizes</code> (an innerwear field), Zod rejects the request with <code>400 Bad Request</code>. This is the <strong>first firewall</strong> before the database.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-related-files">7. Related Files<a href="#7-related-files" class="hash-link" aria-label="Direct link to 7. Related Files" title="Direct link to 7. Related Files" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>File</th><th>Purpose</th></tr></thead><tbody><tr><td><code>src/modules/products/interfaces/base-product.interface.ts</code></td><td>TypeScript interface for base product.</td></tr><tr><td><code>src/modules/products/models/base-product.model.ts</code></td><td>Mongoose schema, indexes, pre‑delete hook.</td></tr><tr><td><code>src/modules/products/interfaces/*.ts</code></td><td>Discriminator interfaces.</td></tr><tr><td><code>src/modules/products/models/*.model.ts</code></td><td>Discriminator models.</td></tr><tr><td><code>src/modules/products/dtos/product.admin.dto.ts</code></td><td>Zod validation for admin creation/update.</td></tr><tr><td><code>src/modules/orders/tax.utils.ts</code></td><td>TaxProfile enum.</td></tr></tbody></table>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next Steps<a href="#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps" translate="no">​</a></h2>
+<ul>
+<li class="">Explore the <a class="" href="/docs-reshma/docs/architecture/product-catalog">Product Catalog Schema</a> for detailed field‑by‑field mapping and examples.</li>
+<li class="">Understand the <a class="" href="/docs-reshma/docs/modules/product-module">Product Module</a> for CRUD operations and Cloudinary integration.</li>
+<li class="">See the <a class="" href="/docs-reshma/docs/architecture/legal-tax-compliance">Tax Engine</a> for how <code>hsnCode</code> and <code>taxProfile</code> are used.</li>
+</ul>
+<hr>
+<p><em>The Reshma-Core Team</em></p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/Afzal14786/docs-reshma/edit/main/docs/architecture/database-design.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs-reshma/docs/architecture/auth-architecture"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">auth-architecture</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs-reshma/docs/architecture/product-catalog"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">product-catalog</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-the-polymorphic-strategy-single-collection" class="table-of-contents__link toc-highlight">1. The Polymorphic Strategy (Single Collection)</a></li><li><a href="#11-architecture-decision-record-why-polymorphism" class="table-of-contents__link toc-highlight">1.1 Architecture Decision Record: Why Polymorphism?</a></li><li><a href="#2-base-product-schema" class="table-of-contents__link toc-highlight">2. Base Product Schema</a></li><li><a href="#3-discriminator-subschemas" class="table-of-contents__link toc-highlight">3. Discriminator Sub‑Schemas</a><ul><li><a href="#31-bangle-schema-itemtype-bangle" class="table-of-contents__link toc-highlight">3.1 Bangle Schema (<code>itemType: &quot;BANGLE&quot;</code>)</a></li><li><a href="#32-apparel-schema-itemtype-apparel" class="table-of-contents__link toc-highlight">3.2 Apparel Schema (<code>itemType: &quot;APPAREL&quot;</code>)</a></li><li><a href="#33-fabric-schema-itemtype-fabric" class="table-of-contents__link toc-highlight">3.3 Fabric Schema (<code>itemType: &quot;FABRIC&quot;</code>)</a></li><li><a href="#34-innerwear-schema-itemtype-innerwear" class="table-of-contents__link toc-highlight">3.4 Innerwear Schema (<code>itemType: &quot;INNERWEAR&quot;</code>)</a></li><li><a href="#35-accessory-schema-itemtype-accessory" class="table-of-contents__link toc-highlight">3.5 Accessory Schema (<code>itemType: &quot;ACCESSORY&quot;</code>)</a></li></ul></li><li><a href="#4-indexing--performance-strategy" class="table-of-contents__link toc-highlight">4. Indexing &amp; Performance Strategy</a></li><li><a href="#5-automatic-cloudinary-cleanup" class="table-of-contents__link toc-highlight">5. Automatic Cloudinary Cleanup</a></li><li><a href="#6-zod-validation-admin-dto" class="table-of-contents__link toc-highlight">6. Zod Validation (Admin DTO)</a></li><li><a href="#7-related-files" class="table-of-contents__link toc-highlight">7. Related Files</a></li><li><a href="#next-steps" class="table-of-contents__link toc-highlight">Next Steps</a></li></ul></div></div></div></div></main></div></div></div><footer class="boutique-footer"><div class="footer-container"><div class="footer-col brand-col"><h3 class="footer-brand-name">Reshma Bangles</h3><p class="footer-description">Premium backend architecture and e-commerce platform API. Designed for elegance and seamless scaling.</p><div class="social-icons"><a href="https://www.instagram.com/reshmabangles" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/reshmabangles" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://www.youtube.com/reshmabangles" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div></div><div class="footer-col links-col"><h4 class="footer-heading">Company</h4><ul class="footer-links"><li><a href="/reshma-docs/docs/deployment/production-checklist">Support &amp; Deployments</a></li><li><a href="/reshma-docs/docs/legal/privacy-policy">Privacy Policy</a></li><li><a href="/reshma-docs/docs/legal/terms">Terms of Service</a></li><li><a href="/reshma-docs/docs/legal/license">System License</a></li></ul></div><div class="footer-col dev-col"><h4 class="footer-heading">Engineering</h4><div class="dev-info"><span class="dev-name">Md Afzal Ansari</span><span class="dev-title">Lead Developer</span></div><div class="dev-icons"><a href="https://github.com/Afzal14786" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/0x4f5a4c/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="https://leetcode.com/0x4f5a4c" target="_blank" rel="noopener noreferrer" aria-label="LeetCode"><i class="fas fa-code"></i></a><a href="https://iamafzal-dev.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Portfolio"><i class="fas fa-briefcase"></i></a><a href="mailto:mdafzal14777@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="footer-bottom"><p class="copyright-text">© <!-- -->2026<!-- --> Reshma Bangles &amp; Boutique. All rights reserved.</p></div></footer></div>
+</body>
+</html>
