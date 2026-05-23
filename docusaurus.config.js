@@ -9,7 +9,7 @@ const config = {
   url: "https://afzal14786.github.io",
   baseUrl: "/docs-reshma/",
   organizationName: "Afzal14786",
-  projectName: "reshma-docs",
+  projectName: "docs-reshma",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   i18n: { defaultLocale: "en", locales: ["en"] },
@@ -34,7 +34,7 @@ const config = {
       {
         docs: {
           sidebarPath: "./sidebars.js",
-          editUrl: "https://github.com/Afzal14786/reshma-docs/edit/main/",
+          editUrl: "https://github.com/Afzal14786/docs-reshma/edit/main/",
           exclude: ["**/README.md"],
         },
         blog: false,
