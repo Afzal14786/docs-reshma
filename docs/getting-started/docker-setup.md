@@ -83,20 +83,20 @@ cp .env.example .env
 #    Leave other variables as placeholders for now.
 
 # 4. Start all services in detached mode
-docker-compose up -d
+docker compose up -d
 
 # 5. Check container status
-docker-compose ps
+docker compose ps
 
 # 6. Seed the database (products, categories, etc.)
 docker exec -it reshma-api npm run seed
 
 # 7. Follow API logs
-docker-compose logs -f reshma-api
+docker compose logs -f reshma-api
 ```  
 
 The API will be available at `http://localhost:5000`.  
-To stop: `docker-compose down`.  
+To stop: `docker compose down`.  
 
 ### Development with Live Reload (Optional)  
 
@@ -110,7 +110,7 @@ volumes:
 Then rebuild and run:  
 
 ```bash
-docker-compose up -d --build
+docker compose up -d --build
 ```  
 
 > **Note:** This is slower on Windows/macOS due to file system overhead. For active development, consider running `npm run dev` natively and only use Docker for dependent services (MongoDB, Redis, Typesense).
@@ -150,13 +150,13 @@ JWT_REFRESH_SECRET=...
 
 ```bash
 # Use the production compose file
-docker-compose -f docker-compose.prod.yml up -d
+docker compose -f docker-compose.prod.yml up -d
 
 # View logs
-docker-compose -f docker-compose.prod.yml logs -f
+docker compose -f docker-compose.prod.yml logs -f
 
 # Stop
-docker-compose -f docker-compose.prod.yml down
+docker compose -f docker-compose.prod.yml down
 ```  
 
 > **Security:** Never expose MongoDB or Redis ports to the internet. The production compose file only publishes port `5000` (API). All other services are accessible only inside the Docker network.  
@@ -202,14 +202,14 @@ SMTP_PASS=...
 
 | Action | Command |
 |--------|---------|
-| Start dev services | `docker-compose up -d` |
-| Start prod services | `docker-compose -f docker-compose.prod.yml up -d` |
-| Stop all | `docker-compose down` (add `-f docker-compose.prod.yml` for prod) |
-| View logs (API) | `docker-compose logs -f reshma-api` |
-| View logs (worker) | `docker-compose logs -f reshma-worker` |
+| Start dev services | `docker compose up -d` |
+| Start prod services | `docker compose -f docker-compose.prod.yml up -d` |
+| Stop all | `docker compose down` (add `-f docker-compose.prod.yml` for prod) |
+| View logs (API) | `docker compose logs -f reshma-api` |
+| View logs (worker) | `docker compose logs -f reshma-worker` |
 | Execute command inside API container | `docker exec -it reshma-api bash` |
-| Rebuild after code changes | `docker-compose up -d --build` |
-| Remove volumes (reset data) | `docker-compose down -v` (⚠️ deletes databases) |
+| Rebuild after code changes | `docker compose up -d --build` |
+| Remove volumes (reset data) | `docker compose down -v` (deletes databases) |
 | Check resource usage | `docker stats` |
 
 ---  
@@ -232,7 +232,7 @@ The `Dockerfile` uses a multi‑stage build:
 - After changing `tsconfig.json` or `Dockerfile`
 
 ```bash
-docker-compose up -d --build --force-recreate
+docker compose up -d --build --force-recreate
 ```  
 
 > **Tip:** For rapid frontend/backend iteration, mount your source code as a volume (development only) to avoid rebuilding on every change.  
@@ -271,7 +271,7 @@ docker exec -it reshma-api node -e "require('./dist/db/seed.js')"   # alternativ
 **Fix:** Rebuild the image:  
 
 ```bash
-docker-compose up -d --build
+docker compose up -d --build
 ```  
 
 ### 2. MongoDB connection refused  
@@ -279,7 +279,7 @@ docker-compose up -d --build
 **Check:** Is the MongoDB container healthy?  
 
 ```bash
-docker-compose ps
+docker compose ps
 # Look for "reshma-db" with status "Up (healthy)" or "Up"
 
 # Test connection from API container
@@ -302,7 +302,7 @@ docker exec -it reshma-typesense curl -H "X-TYPESENSE-API-KEY: your-super-secret
 ### 5. Container exits immediately with code 1  
 View the logs:  
 ```bash
-docker-compose logs reshma-api
+docker compose logs reshma-api
 ```  
 
 Most likely an environment variable validation error – check your `.env` file matches the required schema.  
@@ -312,7 +312,7 @@ Most likely an environment variable validation error – check your `.env` file 
 Ensure Redis is running and the `REDIS_URL` is correct. In development compose, it should be `redis://reshma-redis:6379`.  
 
 ```bash
-docker-compose restart reshma-worker
+docker compose restart reshma-worker
 ```  
 
 ### 7. Out of memory (Typesense)  

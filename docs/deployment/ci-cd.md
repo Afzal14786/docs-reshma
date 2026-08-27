@@ -196,9 +196,9 @@ If a deployment fails, revert to the previous image:
 
 ```bash
 # On the server
-docker-compose -f docker-compose.prod.yml down
+docker compose -f docker-compose.prod.yml down
 docker tag reshma-core:previous reshma-core:latest   # if you tagged previous
-docker-compose -f docker-compose.prod.yml up -d
+docker compose -f docker-compose.prod.yml up -d
 ```  
 
 Or simply push the previous commit to trigger a new deployment.  

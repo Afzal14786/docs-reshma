@@ -150,7 +150,7 @@ These volumes are named and persist across container restarts. To **reset all da
 docker-compose -f docker-compose.prod.yml down -v
 ```  
 
-> ⚠️ This deletes all databases, caches, and search indexes. Use only during disaster recovery.  
+> This deletes all databases, caches, and search indexes. Use only during disaster recovery.  
 
 ---  
 
@@ -206,10 +206,10 @@ To deploy a new version:
 git pull origin main
 
 # Rebuild and restart
-docker-compose -f docker-compose.prod.yml up -d --build
+docker compose -f docker-compose.prod.yml up -d --build
 
 # Check logs
-docker-compose -f docker-compose.prod.yml logs --tail=50 reshma-api
+docker compose -f docker-compose.prod.yml logs --tail=50 reshma-api
 ```  
 
 The old containers are replaced one by one (no downtime if you have multiple replicas – but this single‑node setup has a brief interruption).  
@@ -225,7 +225,7 @@ The old containers are replaced one by one (no downtime if you have multiple rep
 docker stats
 
 # Health status
-docker-compose -f docker-compose.prod.yml ps
+docker compose -f docker-compose.prod.yml ps
 ```  
 
 ### Log Aggregation  

@@ -138,17 +138,17 @@ cp .env.example .env
 #    For local Docker, you can leave MONGO_URI as is – it will be overridden by compose.
 
 # 4. Start all services (API, worker, MongoDB, Redis, Typesense)
-docker-compose up -d
+docker compose up -d
 
 # 5. Seed the database (run inside the API container)
 docker exec -it reshma-api npm run seed
 
 # 6. View logs
-docker-compose logs -f
+docker compose logs -f
 ```  
 
 The API will be available at `http://localhost:5000`.  
-To stop: `docker-compose down`. To rebuild after code changes: `docker-compose up -d --build`.  
+To stop: `docker compose down`. To rebuild after code changes: `docker compose up -d --build`.  
 
 ---  
 
@@ -211,9 +211,9 @@ For a complete reference, see [Environment Variables Guide](./environment-variab
 
 | Command | Description |
 |---------|-------------|
-| `docker-compose up -d` | Starts API + worker + all dependencies in background |
-| `docker-compose logs -f reshma-api` | Follow API logs |
-| `docker-compose exec reshma-api npm run build` | Rebuild TypeScript inside container |
+| `docker compose up -d` | Starts API + worker + all dependencies in background |
+| `docker compose logs -f reshma-api` | Follow API logs |
+| `docker compose exec reshma-api npm run build` | Rebuild TypeScript inside container |
 
 ### Database Seeding  
 
@@ -254,7 +254,7 @@ See [Database Seeding Deep Dive](./database-seeding.md) for details.
 ### 3. Typesense not responding / search returns empty
 
 - **Manual:** Start Typesense with the same API key as in `.env`.
-- **Docker:** Typesense is included in compose – ensure it's healthy: `docker-compose ps`.
+- **Docker:** Typesense is included in compose – ensure it's healthy: `docker compose ps`.
 - **After seeding:** Run the seed script – it automatically syncs products to Typesense.
 
 ### 4. MongoDB authentication failed
@@ -272,7 +272,7 @@ See [Database Seeding Deep Dive](./database-seeding.md) for details.
 
 ### 7. Worker cannot connect to Redis after Docker restart
 
-- **Fix:** Ensure the `reshma-redis` container is running: `docker-compose restart reshma-redis`.   
+- **Fix:** Ensure the `reshma-redis` container is running: `docker compose restart reshma-redis`.   
 
 ---  
 
