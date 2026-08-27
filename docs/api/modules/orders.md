@@ -24,6 +24,7 @@
     - [GET /:id/invoice](#get-idinvoice)
   - [Admin Endpoints](#admin-endpoints)
     - [GET /admin](#get-admin)
+    - [GET /admin/:id](#get-adminid)
     - [POST /admin/:id/dispatch](#post-adminiddispatch)
     - [PATCH /admin/:id/status](#patch-adminidstatus)
   - [Webhooks (Public)](#webhooks-public)
@@ -215,13 +216,28 @@ Fetch all orders across the platform for the fulfillment dashboard. Supports fil
 
 | Param | Type | Default | Description |
 |-------|------|---------|-------------|
+| `total` | integer | `1` | total products |
 | `page` | integer | `1` | Page number |
 | `limit` | integer | `20` | Items per page (max 100) |
+| `totalPage` | string | – | Total page number |
 | `status` | string | – | Filter by order status |
 | `startDate` | ISO date | – | Filter orders created after this date |
 | `endDate` | ISO date | – | Filter orders created before this date |
 
 **Response (200 OK):** Paginated list of orders with customer details.  
+
+### `GET /admin/:id`  
+
+Fetch a single order's full detail for the admin fulfillment view  
+
+**Headers:**  
+`Authorization: Bearer <admin_access_token>`  
+
+**Query parameters:**
+| Param | Type | Description |
+|-------|------|------------|
+| `_id` | string | Order Id |
+
 
 ### `POST /admin/:id/dispatch`
 
